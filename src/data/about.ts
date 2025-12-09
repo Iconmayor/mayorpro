@@ -39,10 +39,10 @@ My passion lies in understanding each client's unique challenges and crafting ta
   ],
   
   stats: [
-    { value: "100+", label: "Projects Completed" },
+    { value: "56+", label: "Projects Completed" },
     { value: "50+", label: "Happy Clients" },
     { value: "8+", label: "Years Experience" },
-    { value: "300%", label: "Avg. Growth Rate" }
+    { value: "210%", label: "Avg. Growth Rate" }
   ],
   
   images: {
