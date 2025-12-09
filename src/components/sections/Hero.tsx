@@ -26,119 +26,155 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
 
       <Container maxWidth="lg" className="relative z-10">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Box className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="text-sm text-primary font-medium">Available for new projects</span>
+              </Box>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Typography 
+                variant="h1" 
+                className="font-display mb-4"
+                sx={{ 
+                  fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                  color: mode === 'dark' ? '#fff' : '#0a0a0a',
+                }}
+              >
+                Hi, I'm{' '}
+                <span className="text-primary">{aboutData.name}</span>
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Typography 
+                variant="h2"
+                sx={{ 
+                  fontSize: { xs: '1.25rem', md: '1.5rem' },
+                  fontWeight: 500,
+                  color: mode === 'dark' ? '#a0a0a0' : '#666',
+                  mb: 3,
+                }}
+              >
+                {aboutData.title}
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Typography 
+                variant="body1"
+                sx={{ 
+                  fontSize: { xs: '1rem', md: '1.125rem' },
+                  color: mode === 'dark' ? '#a0a0a0' : '#666',
+                  mb: 4,
+                  maxWidth: '600px',
+                  lineHeight: 1.7,
+                }}
+              >
+                {aboutData.shortBio}
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Button
+                component={Link}
+                to="/projects"
+                variant="contained"
+                size="large"
+                endIcon={<ArrowRight size={18} />}
+                sx={{
+                  backgroundColor: '#D4AF37',
+                  color: '#0a0a0a',
+                  px: 4,
+                  py: 1.5,
+                  fontWeight: 600,
+                  '&:hover': {
+                    backgroundColor: '#E8C547',
+                  },
+                }}
+              >
+                View Projects
+              </Button>
+              <Button
+                component={Link}
+                to="/contact"
+                variant="outlined"
+                size="large"
+                sx={{
+                  borderColor: mode === 'dark' ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)',
+                  color: mode === 'dark' ? '#fff' : '#0a0a0a',
+                  px: 4,
+                  py: 1.5,
+                  fontWeight: 600,
+                  '&:hover': {
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                  },
+                }}
+              >
+                Contact Me
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="hidden lg:flex justify-center"
           >
-            <Box className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary font-medium">Available for new projects</span>
+            <Box 
+              className="relative"
+              sx={{ maxWidth: 400 }}
+            >
+              {/* Decorative ring */}
+              <div className="absolute -inset-4 rounded-full border-2 border-primary/20" />
+              <div className="absolute -inset-8 rounded-full border border-primary/10" />
+              
+              {/* Image container */}
+              <Box 
+                className="relative rounded-full overflow-hidden gold-glow"
+                sx={{ 
+                  width: { lg: 350, xl: 400 },
+                  height: { lg: 350, xl: 400 },
+                }}
+              >
+                <img
+                  src={aboutData.images.profile}
+                  alt={`${aboutData.name} - Digital Consultant`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              </Box>
             </Box>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <Typography 
-              variant="h1" 
-              className="font-display mb-4"
-              sx={{ 
-                fontSize: { xs: '2.5rem', md: '4rem', lg: '5rem' },
-                fontWeight: 700,
-                lineHeight: 1.1,
-                color: mode === 'dark' ? '#fff' : '#0a0a0a',
-              }}
-            >
-              Hi, I'm{' '}
-              <span className="text-primary">{aboutData.name}</span>
-            </Typography>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Typography 
-              variant="h2"
-              sx={{ 
-                fontSize: { xs: '1.25rem', md: '1.75rem' },
-                fontWeight: 500,
-                color: mode === 'dark' ? '#a0a0a0' : '#666',
-                mb: 3,
-              }}
-            >
-              {aboutData.title}
-            </Typography>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Typography 
-              variant="body1"
-              sx={{ 
-                fontSize: { xs: '1rem', md: '1.125rem' },
-                color: mode === 'dark' ? '#a0a0a0' : '#666',
-                mb: 4,
-                maxWidth: '600px',
-                lineHeight: 1.7,
-              }}
-            >
-              {aboutData.shortBio}
-            </Typography>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-4"
-          >
-            <Button
-              component={Link}
-              to="/projects"
-              variant="contained"
-              size="large"
-              endIcon={<ArrowRight size={18} />}
-              sx={{
-                backgroundColor: '#D4AF37',
-                color: '#0a0a0a',
-                px: 4,
-                py: 1.5,
-                fontWeight: 600,
-                '&:hover': {
-                  backgroundColor: '#E8C547',
-                },
-              }}
-            >
-              View Projects
-            </Button>
-            <Button
-              component={Link}
-              to="/contact"
-              variant="outlined"
-              size="large"
-              sx={{
-                borderColor: mode === 'dark' ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)',
-                color: mode === 'dark' ? '#fff' : '#0a0a0a',
-                px: 4,
-                py: 1.5,
-                fontWeight: 600,
-                '&:hover': {
-                  borderColor: '#D4AF37',
-                  backgroundColor: 'rgba(212, 175, 55, 0.1)',
-                },
-              }}
-            >
-              Contact Me
-            </Button>
           </motion.div>
         </div>
 
