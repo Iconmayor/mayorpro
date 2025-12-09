@@ -1,5 +1,5 @@
 export const aboutData = {
-  name: "Alex Morgan",
+  name: "Adebayo Oluwamayowa",
   title: "Implementing & Digital Consultant",
   tagline: "Transforming Ideas into Digital Success Stories",
   shortBio: "I help businesses scale through strategic digital solutions, combining cutting-edge technology with proven marketing strategies.",
