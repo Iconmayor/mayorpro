@@ -30,14 +30,14 @@ const Footer: React.FC = () => {
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <Link to="/" className="text-2xl font-display font-bold text-primary">
-              AM
+              MP
             </Link>
             <Typography 
               variant="body2" 
               className="mt-2"
               sx={{ color: mode === 'dark' ? '#a0a0a0' : '#666' }}
             >
-              © {currentYear} Alex Morgan. All rights reserved.
+              © {currentYear} Adebayo Oluwamayowa. All rights reserved.
             </Typography>
           </div>
 

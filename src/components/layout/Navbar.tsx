@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                A.M
+                MP
               </motion.span>
             </Link>
 

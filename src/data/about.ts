@@ -3,7 +3,7 @@ export const aboutData = {
   title: "Implementing & Digital Consultant",
   tagline: "Transforming Ideas into Digital Success Stories",
   shortBio: "I help businesses scale through strategic digital solutions, combining cutting-edge technology with proven marketing strategies.",
-  fullBio: `With over 8 years of experience in the digital landscape, I've helped countless businesses transform their online presence and achieve remarkable growth. My unique approach combines technical expertise with creative marketing strategies to deliver results that matter.
+  fullBio: `With over 5 years of experience in the digital landscape, I've helped countless businesses transform their online presence and achieve remarkable growth. My unique approach combines technical expertise with creative marketing strategies to deliver results that matter.
 
 I believe in the power of technology to solve real business problems. Whether it's building a stunning website, running high-converting ad campaigns, or automating your workflows, I'm committed to delivering solutions that drive measurable results.
 
@@ -39,14 +39,14 @@ My passion lies in understanding each client's unique challenges and crafting ta
   ],
   
   stats: [
-    { value: "56+", label: "Projects Completed" },
-    { value: "50+", label: "Happy Clients" },
-    { value: "8+", label: "Years Experience" },
-    { value: "210%", label: "Avg. Growth Rate" }
+    { value: "20+", label: "Projects Completed" },
+    { value: "15+", label: "Happy Clients" },
+    { value: "5+", label: "Years Experience" },
+    { value: "130%", label: "Avg. Growth Rate" }
   ],
   
   images: {
-    profile: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop",
+    profile: "main.jpg", // This is the correct relative path
     working: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop"
   }
 };
