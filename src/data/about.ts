@@ -1,4 +1,5 @@
 export const aboutData = {
+  logo: "2.png",
   name: "ABLE DIGITAL",
   title: "Digital Agency",
   tagline: "Transforming Ideas into Digital Success Stories",

@@ -61,14 +61,13 @@ const Navbar: React.FC = () => {
           >
             {/* Logo - Left */}
             <Link to="/" className="flex items-center gap-2 no-underline">
-              <motion.span 
-                className="text-xl md:text-2xl font-bold"
-                style={{ color: '#D4AF37' }}
+              <motion.img
+                src="/logo.png"
+                alt="Logo"
+                className="h-8 md:h-10 w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-              >
-                ABLE DIGITAL
-              </motion.span>
+              />
             </Link>
 
             {/* Desktop Navigation - Center */}
