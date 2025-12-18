@@ -32,7 +32,7 @@ const Services: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Services | Alex Morgan - Digital Consultant</title>
+        <title>Services | ABLE DIGITAL Agency</title>
         <meta name="description" content="Comprehensive digital services including web development, SEO, social media marketing, lead generation, graphic design, and AI automation." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
@@ -64,7 +64,7 @@ const Services: React.FC = () => {
                     display: 'block'
                   }}
                 >
-                  What I Offer
+                  What We Offer
                 </Typography>
                 <Typography 
                   variant="h1" 

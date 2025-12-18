@@ -62,12 +62,12 @@ const Navbar: React.FC = () => {
             {/* Logo - Left */}
             <Link to="/" className="flex items-center gap-2 no-underline">
               <motion.span 
-                className="text-2xl font-bold"
-                style={{ color: mode === 'dark' ? '#D4AF37' : '#0a0a0a' }}
-                whileHover={{ scale: 1.1 }}
+                className="text-xl md:text-2xl font-bold"
+                style={{ color: '#D4AF37' }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                MP
+                ABLE DIGITAL
               </motion.span>
             </Link>
 
@@ -177,10 +177,8 @@ const Navbar: React.FC = () => {
             onClick={handleDrawerToggle}
             className="no-underline"
           >
-            <span className="text-2xl font-bold" 
-              style={{ color: mode === 'dark' ? '#D4AF37' : '#0a0a0a' }}
-            >
-              MP
+            <span className="text-lg font-bold" style={{ color: '#D4AF37' }}>
+              ABLE DIGITAL
             </span>
           </Link>
           <IconButton 

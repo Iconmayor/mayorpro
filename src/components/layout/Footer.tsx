@@ -29,15 +29,15 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <Link to="/" className="text-2xl font-display font-bold text-primary">
-              MP
+            <Link to="/" className="text-xl font-bold" style={{ color: '#D4AF37' }}>
+              ABLE DIGITAL
             </Link>
             <Typography 
               variant="body2" 
               className="mt-2"
               sx={{ color: mode === 'dark' ? '#a0a0a0' : '#666' }}
             >
-              © {currentYear} Adebayo Oluwamayowa. All rights reserved.
+              © {currentYear} ABLE DIGITAL Agency. All rights reserved.
             </Typography>
           </div>
 
