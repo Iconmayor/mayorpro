@@ -21,7 +21,7 @@ import { useTheme } from '@/context/ThemeContext';
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Stacks', path: '/stacks' },
+  { label: 'Services', path: '/services' },
   { label: 'Experience', path: '/experience' },
   { label: 'Projects', path: '/projects' },
   { label: 'Contact', path: '/contact' },
