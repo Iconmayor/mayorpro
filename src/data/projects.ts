@@ -49,7 +49,7 @@ export const projects: Project[] = [
     id: 5,
     title: "SEO Optimization Project",
     description: "Implemented comprehensive SEO strategy that improved organic traffic by 300% and achieved top 3 rankings for 15+ keywords.",
-    image: "project6.jpeg",
+    image: "project7.jpeg",
     tech: ["SEMrush", "Google Analytics", "Technical SEO", "Content"],
     link: "#",
     category: "SEO"
