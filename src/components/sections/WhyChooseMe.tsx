@@ -4,7 +4,7 @@ import { Container, Typography, Box, Grid } from '@mui/material';
 import { 
   BarChart3, Layers, Award, Zap, Target, HeartHandshake 
 } from 'lucide-react';
-import { whyChooseMe } from '@/data/services';
+import { whyChooseUs } from '@/data/services';
 import { useTheme } from '@/context/ThemeContext';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -40,7 +40,7 @@ const WhyChooseMe: React.FC = () => {
               display: 'block'
             }}
           >
-            Why Work With Me
+            Why Choose Us
           </Typography>
           <Typography 
             variant="h2" 
@@ -51,7 +51,7 @@ const WhyChooseMe: React.FC = () => {
               color: mode === 'dark' ? '#fff' : '#0a0a0a',
             }}
           >
-            Your Success is My <span className="text-primary">Priority</span>
+            Your Success is Our <span className="text-primary">Priority</span>
           </Typography>
           <Typography 
             variant="body1"
@@ -61,13 +61,13 @@ const WhyChooseMe: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Partner with a consultant who delivers measurable results
+            Partner with an agency that delivers measurable results
           </Typography>
         </motion.div>
 
         {/* Benefits Grid */}
         <Grid container spacing={4}>
-          {whyChooseMe.map((item, index) => (
+          {whyChooseUs.map((item, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

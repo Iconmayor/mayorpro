@@ -35,7 +35,7 @@ const AboutBrand: React.FC = () => {
               >
                 <img
                   src={aboutData.images.profile}
-                  alt="Digital Consultant"
+                  alt="ABLE DIGITAL Agency"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -67,7 +67,7 @@ const AboutBrand: React.FC = () => {
                   display: 'block'
                 }}
               >
-                About The Brand
+                About Our Agency
               </Typography>
               
               <Typography 
@@ -93,7 +93,7 @@ const AboutBrand: React.FC = () => {
                 }}
               >
                 {aboutData.shortBio} With a unique blend of technical expertise and marketing strategy, 
-                I deliver end-to-end digital solutions that drive real business growth. From stunning 
+                we deliver end-to-end digital solutions that drive real business growth. From stunning 
                 websites to automated marketing systems, every solution is crafted to maximize your ROI.
               </Typography>
 

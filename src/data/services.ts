@@ -127,7 +127,7 @@ export const services: Service[] = [
   }
 ];
 
-export const whyChooseMe = [
+export const whyChooseUs = [
   {
     id: 1,
     title: "Results-Driven Approach",

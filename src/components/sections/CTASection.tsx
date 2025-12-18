@@ -61,7 +61,7 @@ const CTASection: React.FC = () => {
               lineHeight: 1.7,
             }}
           >
-            Let's discuss how I can help you achieve your goals. Get a free consultation today.
+            Let's discuss how we can help you achieve your goals. Get a free consultation today.
           </Typography>
 
           <Box className="flex flex-col sm:flex-row items-center justify-center gap-4">

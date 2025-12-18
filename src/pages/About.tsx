@@ -13,8 +13,8 @@ const About: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>About | Alex Morgan - Digital Consultant</title>
-        <meta name="description" content="Learn more about Alex Morgan, a seasoned digital consultant with expertise in web development, SEO, marketing, and AI automation." />
+        <title>About Us | ABLE DIGITAL Agency</title>
+        <meta name="description" content="Learn more about ABLE DIGITAL Agency, a digital agency with expertise in web development, SEO, marketing, and AI automation." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -36,7 +36,7 @@ const About: React.FC = () => {
                   color: mode === 'dark' ? '#fff' : '#0a0a0a',
                 }}
               >
-                About <span className="text-primary">Me</span>
+                About <span className="text-primary">Us</span>
               </Typography>
               <Typography 
                 variant="body1"
@@ -65,7 +65,7 @@ const About: React.FC = () => {
                   >
                     <img
                       src={aboutData.images.profile}
-                      alt="Alex Morgan - Digital Consultant"
+                      alt="ABLE DIGITAL Agency"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -105,7 +105,7 @@ const About: React.FC = () => {
                       className="font-display mb-2"
                       sx={{ color: '#D4AF37' }}
                     >
-                      My Mission
+                      Our Mission
                     </Typography>
                     <Typography 
                       variant="body2"
@@ -137,7 +137,7 @@ const About: React.FC = () => {
                   color: mode === 'dark' ? '#fff' : '#0a0a0a',
                 }}
               >
-                My <span className="text-primary">Expertise</span>
+                Our <span className="text-primary">Expertise</span>
               </Typography>
               <Grid container spacing={4}>
                 {aboutData.expertise.map((item, index) => (
