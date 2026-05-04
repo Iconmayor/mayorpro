@@ -47,7 +47,7 @@ Our passion lies in understanding each client's unique challenges and crafting t
   ],
   
   images: {
-    profile: "main.jpg",
+    profile: "/profile.png",
     working: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop"
   }
 };
