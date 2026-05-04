@@ -84,12 +84,17 @@ const ProjectCard: React.FC<{ project: Project; mode: string }> = ({ project, mo
     >
       {/* Image */}
       <Box className="relative overflow-hidden" sx={{ aspectRatio: '16/10' }}>
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            width={1280}
+            height={800}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+        </a>
         
         {/* Category Badge */}
         <Chip
