@@ -9,6 +9,7 @@ import ServicesPreview from '@/components/sections/ServicesPreview';
 import WhyChooseMe from '@/components/sections/WhyChooseMe';
 import FeaturedWork from '@/components/sections/FeaturedWork';
 import CTASection from '@/components/sections/CTASection';
+import Testimonials from '@/components/sections/Testimonials';
 
 const Home: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const Home: React.FC = () => {
           <ServicesPreview />
           <WhyChooseMe />
           <FeaturedWork />
+          <Testimonials />
           <CTASection />
         </main>
         <Footer />
