@@ -14,8 +14,8 @@ const Projects: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Projects | Alex Morgan - Digital Consultant</title>
-        <meta name="description" content="Explore my portfolio of web development, marketing, and automation projects." />
+        <title>Projects | Adebayo Oluwamayowa - Lead Generation Expert</title>
+        <meta name="description" content="Real-life WordPress websites, Local SEO, Google Business Profile, and Lead Generation projects." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
