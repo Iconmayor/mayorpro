@@ -51,8 +51,8 @@ const Stacks: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Tech Stack | Alex Morgan - Digital Consultant</title>
-        <meta name="description" content="Explore the technologies and tools I use for web development, marketing, design, and automation." />
+        <title>Tech Stack | Adebayo Oluwamayowa - Lead Generation Expert</title>
+        <meta name="description" content="Tools and technologies used for WordPress, Local SEO, Google Business Profile, and Lead Generation." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
