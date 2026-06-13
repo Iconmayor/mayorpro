@@ -15,8 +15,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Alex Morgan | Implementing & Digital Consultant</title>
-        <meta name="description" content="Helping businesses scale with smart digital systems, marketing, and automation. Web development, SEO, social media marketing, lead generation, and AI automation services." />
+        <title>Adebayo Oluwamayowa | Helping Service Businesses Generate More Leads Online</title>
+        <meta name="description" content="WordPress Websites, Local SEO, Google Business Profile optimization, and Lead Generation for service businesses." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
