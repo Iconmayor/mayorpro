@@ -14,8 +14,8 @@ const Experience: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Experience | Alex Morgan - Digital Consultant</title>
-        <meta name="description" content="Explore my professional journey and experience in web development, digital marketing, and automation." />
+        <title>Experience | Adebayo Oluwamayowa - Lead Generation Expert</title>
+        <meta name="description" content="Professional journey in WordPress development, Local SEO, Google Business Profile, and Lead Generation." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
