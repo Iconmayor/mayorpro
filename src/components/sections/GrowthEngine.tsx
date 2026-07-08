@@ -7,7 +7,7 @@ import {
 import { growthEngine } from '@/data/growthEngine';
 import { useTheme } from '@/context/ThemeContext';
 
-const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
+const iconMap: Record<string, React.ElementType> = {
   Compass, ShieldCheck, Monitor, MapPin, Star, Sparkles, TrendingUp,
 };
 
