@@ -1,29 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  AppBar, 
-  Toolbar, 
-  IconButton, 
-  Drawer, 
-  List, 
-  ListItem, 
-  ListItemButton,
-  ListItemText,
-  Box,
-  Container,
-  useMediaQuery,
-  useTheme as useMuiTheme
+import {
+  AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemButton,
+  ListItemText, Box, Container, Button,
 } from '@mui/material';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 const navItems = [
-  { label: 'Home', path: '/' },
+  { label: 'Growth System', path: '/services' },
+  { label: 'Case Studies', path: '/projects' },
   { label: 'About', path: '/about' },
-  { label: 'Services', path: '/services' },
-  { label: 'Experience', path: '/experience' },
-  { label: 'Projects', path: '/projects' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -31,76 +19,51 @@ const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { mode, toggleTheme } = useTheme();
   const location = useLocation();
-  const muiTheme = useMuiTheme();
-  const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'));
+  const isDark = mode === 'dark';
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const toggle = () => setMobileOpen((v) => !v);
 
   return (
     <>
-      <AppBar 
-        position="fixed" 
+      <AppBar
+        position="fixed"
         elevation={0}
-        sx={{ 
-          backgroundColor: mode === 'dark' ? 'rgba(10, 10, 10, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(10px)',
-          borderBottom: `1px solid ${mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
+        sx={{
+          backgroundColor: isDark ? 'rgba(10, 10, 10, 0.75)' : 'rgba(255, 255, 255, 0.75)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}`,
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar 
-            disableGutters 
-            sx={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              alignItems: 'center',
-              minHeight: { xs: 64, md: 72 }
-            }}
-          >
-            {/* Logo - Left */}
+          <Toolbar disableGutters sx={{ minHeight: { xs: 64, md: 72 }, display: 'flex', justifyContent: 'space-between' }}>
+            {/* Logo */}
             <Link to="/" className="flex items-center gap-2 no-underline">
-              <motion.img
-                src="/logo.png"
-                alt="Logo"
-                className="h-8 md:h-10 w-auto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              />
+              <span
+                className="font-display font-bold tracking-tight"
+                style={{ color: isDark ? '#fff' : '#0a0a0a', fontSize: '1.15rem', letterSpacing: '-0.02em' }}
+              >
+                Able<span style={{ color: '#D4AF37' }}>Digital</span>
+              </span>
             </Link>
 
-            {/* Desktop Navigation - Center */}
-            <Box 
-              sx={{ 
-                display: { xs: 'none', md: 'flex' },
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                alignItems: 'center',
-                gap: 4
-              }}
-            >
+            {/* Desktop Nav */}
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 4 }}>
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`relative no-underline text-sm font-medium transition-all duration-200 hover:text-primary ${
-                    location.pathname === item.path 
-                      ? 'text-primary' 
-                      : mode === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                  }`}
-                  style={{ 
-                    color: location.pathname === item.path 
-                      ? '#D4AF37' 
-                      : mode === 'dark' ? '#e5e5e5' : '#525252' 
+                  className="relative no-underline text-sm font-medium transition-colors"
+                  style={{
+                    color: location.pathname === item.path
+                      ? '#D4AF37'
+                      : isDark ? '#d0d0d0' : '#374151',
                   }}
                 >
                   {item.label}
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full"
                       style={{ backgroundColor: '#D4AF37' }}
                     />
                   )}
@@ -108,17 +71,13 @@ const Navbar: React.FC = () => {
               ))}
             </Box>
 
-            {/* Right Section - Theme Toggle & Mobile Menu */}
+            {/* Right */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              {/* Theme Toggle - Always Visible */}
-              <IconButton 
+              <IconButton
                 onClick={toggleTheme}
-                sx={{ 
-                  color: mode === 'dark' ? '#D4AF37' : '#0a0a0a',
-                  '&:hover': { 
-                    backgroundColor: mode === 'dark' ? 'rgba(212, 175, 55, 0.1)' : 'rgba(10, 10, 10, 0.1)' 
-                  }
-                }}
+                size="small"
+                sx={{ color: isDark ? '#D4AF37' : '#0a0a0a' }}
+                aria-label="Toggle theme"
               >
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -128,63 +87,62 @@ const Navbar: React.FC = () => {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    {mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                    {isDark ? <Sun size={18} /> : <Moon size={18} />}
                   </motion.div>
                 </AnimatePresence>
               </IconButton>
 
-              {/* Mobile Menu Button */}
-              <IconButton
-                sx={{ 
-                  display: { xs: 'flex', md: 'none' },
-                  color: mode === 'dark' ? '#fff' : '#0a0a0a',
-                  '&:hover': { 
-                    backgroundColor: mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)' 
-                  }
+              <Button
+                component={Link}
+                to="/contact"
+                variant="contained"
+                size="small"
+                sx={{
+                  display: { xs: 'none', md: 'inline-flex' },
+                  backgroundColor: '#D4AF37',
+                  color: '#0a0a0a',
+                  fontWeight: 700,
+                  borderRadius: '8px',
+                  px: 2.5,
+                  py: 1,
+                  boxShadow: 'none',
+                  '&:hover': { backgroundColor: '#E8C547' },
                 }}
-                onClick={handleDrawerToggle}
               >
-                <Menu size={24} />
+                Book a Call
+              </Button>
+
+              <IconButton
+                sx={{ display: { xs: 'flex', md: 'none' }, color: isDark ? '#fff' : '#0a0a0a' }}
+                onClick={toggle}
+                aria-label="Open menu"
+              >
+                <Menu size={22} />
               </IconButton>
             </Box>
           </Toolbar>
         </Container>
       </AppBar>
 
-      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{ keepMounted: true }}
+        onClose={toggle}
         PaperProps={{
           sx: {
-            width: 280,
-            backgroundColor: mode === 'dark' ? '#0a0a0a' : '#ffffff',
-            borderLeft: `1px solid ${mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
+            width: 300,
+            backgroundColor: isDark ? '#0a0a0a' : '#fff',
           },
         }}
       >
-        <Box className="p-4 flex items-center justify-between border-b" 
-          sx={{ 
-            borderColor: mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
-            minHeight: 64
-          }}
-        >
-          <Link 
-            to="/" 
-            onClick={handleDrawerToggle}
-            className="no-underline"
-          >
-            <span className="text-lg font-bold" style={{ color: '#D4AF37' }}>
-              ABLE DIGITAL
+        <Box className="p-4 flex items-center justify-between border-b" sx={{ borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' }}>
+          <Link to="/" onClick={toggle} className="no-underline">
+            <span className="font-display font-bold" style={{ color: isDark ? '#fff' : '#0a0a0a', fontSize: '1.05rem' }}>
+              Able<span style={{ color: '#D4AF37' }}>Digital</span>
             </span>
           </Link>
-          <IconButton 
-            onClick={handleDrawerToggle}
-            sx={{ color: mode === 'dark' ? '#fff' : '#0a0a0a' }}
-          >
-            <X size={24} />
+          <IconButton onClick={toggle} sx={{ color: isDark ? '#fff' : '#0a0a0a' }}>
+            <X size={22} />
           </IconButton>
         </Box>
         <List sx={{ py: 2 }}>
@@ -193,45 +151,41 @@ const Navbar: React.FC = () => {
               <ListItemButton
                 component={Link}
                 to={item.path}
-                onClick={handleDrawerToggle}
+                onClick={toggle}
                 sx={{
-                  py: 2.5,
-                  px: 4,
-                  my: 0.5,
-                  mx: 2,
-                  borderRadius: 1,
-                  color: location.pathname === item.path 
-                    ? '#D4AF37' 
-                    : mode === 'dark' ? '#fff' : '#0a0a0a',
-                  backgroundColor: location.pathname === item.path 
-                    ? mode === 'dark' ? 'rgba(212, 175, 55, 0.15)' : 'rgba(212, 175, 55, 0.1)'
-                    : 'transparent',
-                  '&:hover': {
-                    backgroundColor: mode === 'dark' ? 'rgba(212, 175, 55, 0.1)' : 'rgba(212, 175, 55, 0.05)',
-                  },
+                  py: 2,
+                  px: 3,
+                  color: location.pathname === item.path ? '#D4AF37' : (isDark ? '#fff' : '#0a0a0a'),
                 }}
               >
-                <ListItemText 
+                <ListItemText
                   primary={item.label}
-                  primaryTypographyProps={{
-                    fontWeight: location.pathname === item.path ? 600 : 400,
-                    fontSize: '1rem',
-                  }}
+                  primaryTypographyProps={{ fontWeight: location.pathname === item.path ? 700 : 500, fontSize: '1rem' }}
                 />
-                {location.pathname === item.path && (
-                  <motion.div
-                    layoutId="mobileActive"
-                    className="w-1.5 h-6 rounded-full"
-                    style={{ backgroundColor: '#D4AF37' }}
-                  />
-                )}
               </ListItemButton>
             </ListItem>
           ))}
         </List>
+        <Box className="p-4">
+          <Button
+            component={Link}
+            to="/contact"
+            onClick={toggle}
+            variant="contained"
+            fullWidth
+            sx={{
+              backgroundColor: '#D4AF37',
+              color: '#0a0a0a',
+              fontWeight: 700,
+              py: 1.4,
+              '&:hover': { backgroundColor: '#E8C547' },
+            }}
+          >
+            Book a Strategy Call
+          </Button>
+        </Box>
       </Drawer>
 
-      {/* Spacer for fixed navbar */}
       <Toolbar />
     </>
   );
