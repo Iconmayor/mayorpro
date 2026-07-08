@@ -1,89 +1,205 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Container, Typography, Box, Button } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Container, Typography, Box, Grid, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { 
+  Globe, Search, Share2, Users, Target, Palette, 
+  Bot, TrendingUp, Workflow, ArrowRight, CheckCircle 
+} from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import GrowthEngine from '@/components/sections/GrowthEngine';
 import CTASection from '@/components/sections/CTASection';
-import FAQ from '@/components/sections/FAQ';
+import { services } from '@/data/services';
 import { useTheme } from '@/context/ThemeContext';
+
+const iconMap: Record<string, React.ReactNode> = {
+  Globe: <Globe size={32} />,
+  Search: <Search size={32} />,
+  Share2: <Share2 size={32} />,
+  Users: <Users size={32} />,
+  Target: <Target size={32} />,
+  Palette: <Palette size={32} />,
+  Bot: <Bot size={32} />,
+  TrendingUp: <TrendingUp size={32} />,
+  Workflow: <Workflow size={32} />,
+};
 
 const Services: React.FC = () => {
   const { mode } = useTheme();
-  const isDark = mode === 'dark';
 
   return (
     <>
       <Helmet>
-        <title>The Local Growth Engine™ | Able Digital</title>
-        <meta name="description" content="Seven phases. One system. How Able Digital builds a complete Local Growth Engine for home service businesses in the United States." />
+        <title>Services | ABLE DIGITAL Agency</title>
+        <meta name="description" content="Comprehensive digital services including web development, SEO, social media marketing, lead generation, graphic design, and AI automation." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">
-          <section
+          {/* Hero Section */}
+          <section 
             className="section-padding relative overflow-hidden"
             style={{
-              background: isDark
-                ? 'radial-gradient(1000px 500px at 50% -10%, rgba(212,175,55,0.10), transparent 60%), #0a0a0a'
-                : 'radial-gradient(1000px 500px at 50% -10%, rgba(212,175,55,0.15), transparent 60%), #ffffff',
+              background: mode === 'dark'
+                ? 'linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 50%, hsl(43 74% 52% / 0.1) 100%)'
+                : 'linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 50%, hsl(43 74% 52% / 0.15) 100%)',
             }}
           >
-            <Container maxWidth="md" className="text-center">
-              <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-                The Growth System
-              </Typography>
-              <Typography
-                className="font-display"
-                sx={{
-                  fontSize: { xs: '2.25rem', md: '3.5rem' },
-                  fontWeight: 700,
-                  letterSpacing: '-0.02em',
-                  lineHeight: 1.05,
-                  color: isDark ? '#fff' : '#0a0a0a',
-                  mb: 3,
-                }}
+            <Container maxWidth="lg">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-center max-w-3xl mx-auto"
               >
-                The Able Digital <span className="text-primary">Local Growth Engine™</span>
-              </Typography>
-              <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.15rem', lineHeight: 1.6, mb: 5, maxWidth: 640, mx: 'auto' }}>
-                Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system. Every phase compounds the next.
-              </Typography>
-              <div className="flex flex-wrap gap-3 justify-center">
-                <Button
-                  component={Link}
-                  to="/contact"
-                  variant="contained"
-                  size="large"
-                  startIcon={<Calendar size={18} />}
-                  sx={{ backgroundColor: '#D4AF37', color: '#0a0a0a', px: 3.5, py: 1.6, borderRadius: '10px', fontWeight: 700, '&:hover': { backgroundColor: '#E8C547' } }}
-                >
-                  Book a Strategy Call
-                </Button>
-                <Button
-                  component="a"
-                  href="#growth-engine"
-                  variant="outlined"
-                  size="large"
-                  endIcon={<ArrowRight size={18} />}
-                  sx={{
-                    borderColor: isDark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.18)',
-                    color: isDark ? '#fff' : '#0a0a0a',
-                    px: 3.5, py: 1.6, borderRadius: '10px', fontWeight: 600,
-                    '&:hover': { borderColor: '#D4AF37', backgroundColor: 'rgba(212,175,55,0.08)' },
+                <Typography 
+                  variant="overline"
+                  sx={{ 
+                    color: '#D4AF37',
+                    fontWeight: 600,
+                    letterSpacing: 2,
+                    mb: 2,
+                    display: 'block'
                   }}
                 >
-                  Explore the System
-                </Button>
+                  What We Offer
+                </Typography>
+                <Typography 
+                  variant="h1" 
+                  className="font-display mb-4"
+                  sx={{ 
+                    fontSize: { xs: '2rem', md: '3rem' },
+                    fontWeight: 700,
+                    color: mode === 'dark' ? '#fff' : '#0a0a0a',
+                  }}
+                >
+                  Digital Services That <span className="text-primary">Drive Growth</span>
+                </Typography>
+                <Typography 
+                  variant="body1"
+                  sx={{ 
+                    color: mode === 'dark' ? '#a0a0a0' : '#666',
+                    fontSize: '1.125rem',
+                  }}
+                >
+                  End-to-end digital solutions designed to help your business thrive in the modern landscape
+                </Typography>
+              </motion.div>
+            </Container>
+          </section>
+
+          {/* Services List */}
+          <section className="section-padding">
+            <Container maxWidth="lg">
+              <div className="space-y-16">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 * index }}
+                  >
+                    <Grid 
+                      container 
+                      spacing={6} 
+                      alignItems="center"
+                      direction={index % 2 === 0 ? 'row' : 'row-reverse'}
+                    >
+                      {/* Icon/Visual */}
+                      <Grid size={{ xs: 12, md: 4 }}>
+                        <Box 
+                          className="w-full aspect-square max-w-xs mx-auto rounded-2xl flex items-center justify-center"
+                          sx={{ 
+                            background: mode === 'dark' 
+                              ? 'linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%)'
+                              : 'linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%)',
+                            border: '1px solid',
+                            borderColor: 'rgba(212, 175, 55, 0.2)',
+                          }}
+                        >
+                          <Box sx={{ color: '#D4AF37', transform: 'scale(3)' }}>
+                            {iconMap[service.icon] || <Globe size={32} />}
+                          </Box>
+                        </Box>
+                      </Grid>
+
+                      {/* Content */}
+                      <Grid size={{ xs: 12, md: 8 }}>
+                        <Typography 
+                          variant="overline"
+                          sx={{ 
+                            color: '#D4AF37',
+                            fontWeight: 600,
+                            letterSpacing: 1,
+                            mb: 1,
+                            display: 'block'
+                          }}
+                        >
+                          {service.category}
+                        </Typography>
+                        <Typography 
+                          variant="h3" 
+                          className="mb-3"
+                          sx={{ 
+                            fontSize: { xs: '1.5rem', md: '2rem' },
+                            fontWeight: 700,
+                            color: mode === 'dark' ? '#fff' : '#0a0a0a',
+                          }}
+                        >
+                          {service.title}
+                        </Typography>
+                        <Typography 
+                          variant="body1"
+                          sx={{ 
+                            color: mode === 'dark' ? '#a0a0a0' : '#666',
+                            mb: 3,
+                            lineHeight: 1.7,
+                          }}
+                        >
+                          {service.description}
+                        </Typography>
+
+                        {/* Benefits */}
+                        <Grid container spacing={2}>
+                          {service.benefits.map((benefit, bIndex) => (
+                            <Grid size={{ xs: 12, sm: 6 }} key={bIndex}>
+                              <Box className="flex items-center gap-2">
+                                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                                <Typography 
+                                  variant="body2"
+                                  sx={{ 
+                                    color: mode === 'dark' ? '#e0e0e0' : '#333',
+                                    fontWeight: 500,
+                                  }}
+                                >
+                                  {benefit}
+                                </Typography>
+                              </Box>
+                            </Grid>
+                          ))}
+                        </Grid>
+                      </Grid>
+                    </Grid>
+
+                    {/* Divider */}
+                    {index < services.length - 1 && (
+                      <Box 
+                        className="mt-16"
+                        sx={{ 
+                          borderBottom: '1px solid',
+                          borderColor: mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
+                        }}
+                      />
+                    )}
+                  </motion.div>
+                ))}
               </div>
             </Container>
           </section>
 
-          <GrowthEngine detailed />
-          <FAQ />
           <CTASection />
         </main>
         <Footer />

@@ -1,14 +1,12 @@
-export type Platform = 'Google' | 'Direct Client' | 'Referral';
+export type Platform = 'Fiverr' | 'Upwork' | 'Direct Client';
 
 export interface Testimonial {
   id: string;
   name: string;
-  role: string;
-  company: string;
-  country: string;
+  country: string; // ISO code lowercase, e.g. 'us'
   countryName: string;
   platform: Platform;
-  rating: number;
+  rating: number; // 1-5
   review: string;
   verified?: boolean;
   topRated?: boolean;
@@ -18,89 +16,71 @@ export interface Testimonial {
 export const seedTestimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Marcus Reeves',
-    role: 'Owner',
-    company: 'Reeves HVAC',
+    name: 'Sarah Johnson',
     country: 'us',
-    countryName: 'Phoenix, AZ',
-    platform: 'Google',
+    countryName: 'United States',
+    platform: 'Fiverr',
     rating: 5,
-    review:
-      "We went from invisible on Google to the top of the Map Pack in one quarter. Our summer call volume more than tripled. Able Digital doesn't feel like a vendor — they feel like part of the company.",
+    review: 'Outstanding work! ABLE DIGITAL transformed our online presence completely. Their attention to detail and strategic approach delivered results beyond our expectations.',
     verified: true,
     topRated: true,
     date: '2 weeks ago',
   },
   {
     id: '2',
-    name: 'Danielle Ortega',
-    role: 'General Manager',
-    company: 'Ortega Roofing',
-    country: 'us',
-    countryName: 'Atlanta, GA',
-    platform: 'Direct Client',
+    name: 'James Whitmore',
+    country: 'gb',
+    countryName: 'United Kingdom',
+    platform: 'Upwork',
     rating: 5,
-    review:
-      "Every inbound lead gets a response inside a minute. We stopped losing storm jobs to national competitors. The dashboard alone is worth the fee.",
+    review: 'Exceptional team! They built our entire automation workflow and our productivity skyrocketed. Highly professional and responsive throughout the project.',
     verified: true,
     topRated: true,
     date: '1 month ago',
   },
   {
     id: '3',
-    name: 'Kevin Nguyen',
-    role: 'Founder',
-    company: 'Nguyen Plumbing',
-    country: 'us',
-    countryName: 'Dallas, TX',
-    platform: 'Google',
+    name: 'Aisha Khan',
+    country: 'ca',
+    countryName: 'Canada',
+    platform: 'Fiverr',
     rating: 5,
-    review:
-      "I spent years wasting money on agencies that sold me tactics. Able Digital sold me a system — and it works. Organic calls are up more than 3x and we cut ad spend.",
+    review: 'Best digital agency we have worked with. The website they built converts like crazy. Will definitely hire again for our next project!',
     verified: true,
     date: '3 weeks ago',
   },
   {
     id: '4',
-    name: 'Sarah Whitfield',
-    role: 'Principal',
-    company: 'Whitfield Design-Build',
-    country: 'us',
-    countryName: 'Denver, CO',
+    name: 'Marcus Weber',
+    country: 'de',
+    countryName: 'Germany',
     platform: 'Direct Client',
     rating: 5,
-    review:
-      "They repositioned our brand and rebuilt our site to actually match the caliber of work we do. We stopped competing on price. Average project value doubled.",
+    review: 'Truly premium service. They took time to understand our brand before delivering a stunning, conversion-focused website. Worth every penny.',
     verified: true,
     date: '2 months ago',
   },
   {
     id: '5',
-    name: 'Jamal Roberts',
-    role: 'Owner',
-    company: 'Greenline Landscaping',
-    country: 'us',
-    countryName: 'Tampa, FL',
-    platform: 'Referral',
-    rating: 5,
-    review:
-      "We're booked six months out with zero ad spend. Reviews come in on their own now. This is what a real growth partner looks like.",
+    name: 'Olivia Martin',
+    country: 'au',
+    countryName: 'Australia',
+    platform: 'Upwork',
+    rating: 4,
+    review: 'Great communication and excellent results on our SEO campaign. Saw a 130% increase in organic traffic within 3 months. Highly recommended.',
     verified: true,
-    topRated: true,
     date: '1 month ago',
   },
   {
     id: '6',
-    name: 'Priya Chandra',
-    role: 'Operations Director',
-    company: 'Bright Path Electric',
-    country: 'us',
-    countryName: 'Charlotte, NC',
-    platform: 'Google',
+    name: 'Daniel Okeke',
+    country: 'ng',
+    countryName: 'Nigeria',
+    platform: 'Direct Client',
     rating: 5,
-    review:
-      "The AI follow-up alone changed our business. We were losing 60% of leads before. Now we close two out of three. Serious, calm, professional team.",
+    review: 'ABLE DIGITAL delivered a complete brand overhaul plus automation systems that saved us hours every week. Professional, reliable, and innovative.',
     verified: true,
+    topRated: true,
     date: '3 weeks ago',
   },
 ];

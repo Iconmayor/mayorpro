@@ -1,41 +1,53 @@
 export const aboutData = {
   logo: "2.png",
-  name: "Able Digital",
-  title: "Local Growth Partner for Home Service Businesses",
-  tagline: "Build Trust. Get Found. Generate More Qualified Local Leads.",
-  shortBio:
-    "Able Digital is a growth partner for home service businesses in the United States. We build the websites, Local SEO, Google Business Profile, review systems, and AI visibility that turn local search into booked jobs.",
-  fullBio: `Able Digital was built on a simple observation: most home service businesses have great crews, honest pricing, and loyal customers — and almost no digital presence to match.
+  name: "ABLE DIGITAL",
+  title: "Digital Agency",
+  tagline: "Transforming Ideas into Digital Success Stories",
+  shortBio: "We help businesses scale through strategic digital solutions, combining cutting-edge technology with proven marketing strategies.",
+  fullBio: `With over 5 years of experience in the digital landscape, we've helped countless businesses transform their online presence and achieve remarkable growth. Our unique approach combines technical expertise with creative marketing strategies to deliver results that matter.
 
-Meanwhile, national brands and venture-backed marketplaces spend millions to sit at the top of Google, Google Maps, and now AI search results. The gap keeps widening.
+We believe in the power of technology to solve real business problems. Whether it's building a stunning website, running high-converting ad campaigns, or automating your workflows, our team is committed to delivering solutions that drive measurable results.
 
-We close that gap with one complete system — the Able Digital Local Growth Engine™. Websites that convert. Local SEO that ranks. Google Business Profiles that dominate the Map Pack. Reviews that compound. AI visibility that gets you cited. And follow-up that responds in seconds, not hours.
-
-We work only with home service operators in the United States. Every workflow, every service page, every AI prompt is tuned to how local customers actually search, decide, and book. No cookie-cutter templates. No generic marketing playbooks. No fluff.
-
-If you're an established operator — 3 to 50 employees, real revenue, ready to compound — we would like to be your long-term growth partner.`,
-
-  mission:
-    "To make Able Digital the operating system for growth behind the best home service businesses in the United States.",
-
-  principles: [
-    { title: "Systems, not tactics.", description: "One engine, one outcome — qualified local leads. Nothing bolted on." },
-    { title: "Own the local moat.", description: "Map Pack, Local SEO, and AI visibility compound. We build them all together." },
-    { title: "Speed compounds.", description: "First responder wins. Every lead answered inside 60 seconds." },
-    { title: "Transparent by default.", description: "Live dashboard. Real reporting. You always know what's working." },
-    { title: "Craft over volume.", description: "Fewer partners, better results, longer relationships." },
-    { title: "Home service is our lane.", description: "We don't work with everyone. We know your customer." },
+Our passion lies in understanding each client's unique challenges and crafting tailored strategies that not only meet but exceed their goals. From startups to established enterprises, we've had the privilege of working with diverse clients across various industries.`,
+  
+  mission: "To empower businesses with innovative digital solutions that drive growth, enhance efficiency, and create lasting impact in an ever-evolving digital world.",
+  
+  expertise: [
+    {
+      title: "Web Development",
+      description: "Building fast, responsive, and SEO-optimized websites using modern technologies like React, Next.js, and Node.js."
+    },
+    {
+      title: "Digital Marketing",
+      description: "Crafting data-driven marketing strategies that increase visibility, engagement, and conversions across all digital channels."
+    },
+    {
+      title: "SEO Optimization",
+      description: "Implementing comprehensive SEO strategies that improve organic rankings and drive sustainable traffic growth."
+    },
+    {
+      title: "Lead Generation",
+      description: "Creating high-converting Facebook and Google Ads campaigns that deliver qualified leads at optimal costs."
+    },
+    {
+      title: "AI Automation",
+      description: "Designing intelligent automation workflows using GoHighLevel, Zapier, and AI tools to save time and boost productivity."
+    },
+    {
+      title: "Brand Design",
+      description: "Creating compelling visual identities that resonate with target audiences and stand out in crowded markets."
+    }
   ],
-
+  
   stats: [
-    { value: "3.2×", label: "Avg. qualified call lift" },
-    { value: "Top 3", label: "Map Pack placements" },
-    { value: "<60s", label: "Lead response time" },
-    { value: "4.9★", label: "Client rating" },
+    { value: "20+", label: "Projects Completed" },
+    { value: "15+", label: "Happy Clients" },
+    { value: "5+", label: "Years Experience" },
+    { value: "130%", label: "Avg. Growth Rate" }
   ],
-
+  
   images: {
     profile: "/profile.png",
-    working: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-  },
+    working: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop"
+  }
 };

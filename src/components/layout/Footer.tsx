@@ -1,83 +1,67 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, IconButton, Typography } from '@mui/material';
+import { Linkedin, Twitter, Github, Instagram, Mail } from 'lucide-react';
+import { socials } from '@/data/socials';
 import { useTheme } from '@/context/ThemeContext';
+
+const iconMap: Record<string, React.ReactNode> = {
+  Linkedin: <Linkedin size={20} />,
+  Twitter: <Twitter size={20} />,
+  Github: <Github size={20} />,
+  Instagram: <Instagram size={20} />,
+  Mail: <Mail size={20} />,
+};
 
 const Footer: React.FC = () => {
   const { mode } = useTheme();
-  const isDark = mode === 'dark';
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
     <Box
       component="footer"
-      className="border-t"
+      className="border-t border-border py-12"
       sx={{
-        borderColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
-        backgroundColor: isDark ? '#0a0a0a' : '#fafafa',
-        py: 8,
+        backgroundColor: mode === 'dark' ? 'rgba(10, 10, 10, 0.95)' : 'rgba(255, 255, 255, 0.95)',
       }}
     >
       <Container maxWidth="lg">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-          <div className="md:col-span-2 max-w-sm">
-            <Link to="/" className="no-underline">
-              <span className="font-display font-bold text-xl" style={{ color: isDark ? '#fff' : '#0a0a0a', letterSpacing: '-0.02em' }}>
-                Able<span style={{ color: '#D4AF37' }}>Digital</span>
-              </span>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Logo & Copyright */}
+          <div className="text-center md:text-left">
+            <Link to="/" className="text-xl font-bold" style={{ color: '#D4AF37' }}>
+              ABLE DIGITAL
             </Link>
-            <Typography sx={{ mt: 2, color: isDark ? '#a0a0a0' : '#6b7280', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              The Local Growth Engine for home service businesses in the United States.
+            <Typography 
+              variant="body2" 
+              className="mt-2"
+              sx={{ color: mode === 'dark' ? '#a0a0a0' : '#666' }}
+            >
+              © {currentYear} ABLE DIGITAL Agency. All rights reserved.
             </Typography>
           </div>
 
-          <div>
-            <Typography sx={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, color: isDark ? '#d0d0d0' : '#374151', mb: 2 }}>
-              Company
-            </Typography>
-            <ul className="space-y-2">
-              {[
-                { l: 'Growth System', p: '/services' },
-                { l: 'Case Studies', p: '/projects' },
-                { l: 'About', p: '/about' },
-                { l: 'Contact', p: '/contact' },
-              ].map((i) => (
-                <li key={i.p}>
-                  <Link to={i.p} className="no-underline text-sm" style={{ color: isDark ? '#a0a0a0' : '#6b7280' }}>
-                    {i.l}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            {socials.map((social) => (
+              <IconButton
+                key={social.id}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="small"
+                sx={{
+                  color: mode === 'dark' ? '#a0a0a0' : '#666',
+                  '&:hover': {
+                    color: '#D4AF37',
+                    backgroundColor: mode === 'dark' ? 'rgba(212, 175, 55, 0.1)' : 'rgba(212, 175, 55, 0.1)',
+                  },
+                }}
+              >
+                {iconMap[social.icon]}
+              </IconButton>
+            ))}
           </div>
-
-          <div>
-            <Typography sx={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, color: isDark ? '#d0d0d0' : '#374151', mb: 2 }}>
-              Get In Touch
-            </Typography>
-            <ul className="space-y-2 text-sm" style={{ color: isDark ? '#a0a0a0' : '#6b7280' }}>
-              <li>
-                <a href="mailto:Iconmayor1@gmail.com" className="no-underline" style={{ color: 'inherit' }}>
-                  Iconmayor1@gmail.com
-                </a>
-              </li>
-              <li>Serving the United States</li>
-              <li>
-                <a href="https://wa.me/2349167587995" target="_blank" rel="noreferrer" className="no-underline" style={{ color: 'inherit' }}>
-                  WhatsApp us
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)' }}>
-          <Typography sx={{ color: isDark ? '#7a7a7a' : '#9ca3af', fontSize: '0.8rem' }}>
-            © {year} Able Digital. All rights reserved.
-          </Typography>
-          <Typography sx={{ color: isDark ? '#7a7a7a' : '#9ca3af', fontSize: '0.8rem' }}>
-            Build Trust. Get Found. Generate More Qualified Local Leads.
-          </Typography>
         </div>
       </Container>
     </Box>

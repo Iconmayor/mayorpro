@@ -1,162 +1,179 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Container, Typography, Box, Grid, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
+import { Container, Typography, Box, Grid, Chip, Button } from '@mui/material';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import CTASection from '@/components/sections/CTASection';
-import { caseStudies } from '@/data/caseStudies';
+import { projects, Project } from '@/data/projects';
 import { useTheme } from '@/context/ThemeContext';
 
 const Projects: React.FC = () => {
   const { mode } = useTheme();
-  const isDark = mode === 'dark';
 
   return (
     <>
       <Helmet>
-        <title>Case Studies | Able Digital — Local Growth for Home Services</title>
-        <meta name="description" content="Real home service operators. Real results. See how Able Digital's Local Growth Engine turned local search into booked jobs." />
+        <title>Projects | Adebayo Oluwamayowa - Lead Generation Expert</title>
+        <meta name="description" content="Real-life WordPress websites, Local SEO, Google Business Profile, and Lead Generation projects." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">
-          <section
-            className="section-padding"
-            style={{
-              background: isDark
-                ? 'radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,0.10), transparent 60%), #0a0a0a'
-                : 'radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,0.15), transparent 60%), #ffffff',
-            }}
-          >
-            <Container maxWidth="md" className="text-center">
-              <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-                Case Studies
-              </Typography>
-              <Typography
-                className="font-display"
-                sx={{
-                  fontSize: { xs: '2.25rem', md: '3.5rem' },
+        <main className="flex-1 section-padding">
+          <Container maxWidth="lg">
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <Typography 
+                variant="h1" 
+                className="font-display mb-4"
+                sx={{ 
+                  fontSize: { xs: '2rem', md: '3rem' },
                   fontWeight: 700,
-                  letterSpacing: '-0.02em',
-                  lineHeight: 1.05,
-                  color: isDark ? '#fff' : '#0a0a0a',
-                  mb: 3,
+                  color: mode === 'dark' ? '#fff' : '#0a0a0a',
                 }}
               >
-                Home service operators <span className="text-primary">winning locally.</span>
+                Featured <span className="text-primary">Projects</span>
               </Typography>
-              <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: 620, mx: 'auto' }}>
-                Every engagement is measured. Every result is real. Here's what the Local Growth Engine looks like in production.
+              <Typography 
+                variant="body1"
+                sx={{ 
+                  color: mode === 'dark' ? '#a0a0a0' : '#666',
+                  maxWidth: '600px',
+                  mx: 'auto',
+                }}
+              >
+                A showcase of my best work across web development, marketing, and automation
               </Typography>
-            </Container>
-          </section>
+            </motion.div>
 
-          <section className="section-padding">
-            <Container maxWidth="lg">
-              <div className="space-y-16 md:space-y-24">
-                {caseStudies.map((c, i) => {
-                  const flip = i % 2 === 1;
-                  return (
-                    <motion.article
-                      key={c.id}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-80px' }}
-                      transition={{ duration: 0.5 }}
-                      className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center"
-                    >
-                      <div className={`lg:col-span-6 ${flip ? 'lg:order-2' : ''}`}>
-                        <div
-                          className="rounded-2xl overflow-hidden border"
-                          style={{
-                            borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
-                            boxShadow: '0 30px 60px -30px rgba(0,0,0,0.35)',
-                          }}
-                        >
-                          <img
-                            src={c.image}
-                            alt={c.title}
-                            loading="lazy"
-                            className="w-full h-auto aspect-[16/10] object-cover"
-                          />
-                        </div>
-                      </div>
-
-                      <div className={`lg:col-span-6 ${flip ? 'lg:order-1' : ''}`}>
-                        <div className="flex gap-2 mb-4">
-                          <Chip label={c.industry} size="small" sx={{ backgroundColor: 'rgba(212,175,55,0.15)', color: '#D4AF37', fontWeight: 700 }} />
-                          <Chip label={c.location} size="small" sx={{ backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)', color: isDark ? '#d0d0d0' : '#4b5563' }} />
-                        </div>
-                        <Typography
-                          className="font-display"
-                          sx={{
-                            fontSize: { xs: '1.75rem', md: '2.25rem' },
-                            fontWeight: 700,
-                            letterSpacing: '-0.02em',
-                            lineHeight: 1.1,
-                            color: isDark ? '#fff' : '#0a0a0a',
-                            mb: 2,
-                          }}
-                        >
-                          {c.title}
-                        </Typography>
-                        <Typography sx={{ color: isDark ? '#a0a0a0' : '#4b5563', fontSize: '1.05rem', lineHeight: 1.6, mb: 4 }}>
-                          {c.headline}
-                        </Typography>
-
-                        <div className="space-y-4 mb-6">
-                          <div>
-                            <Typography sx={{ color: '#D4AF37', fontWeight: 700, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.12em', mb: 1 }}>
-                              Challenge
-                            </Typography>
-                            <Typography sx={{ color: isDark ? '#c7c7c7' : '#374151', fontSize: '0.95rem', lineHeight: 1.65 }}>
-                              {c.challenge}
-                            </Typography>
-                          </div>
-                          <div>
-                            <Typography sx={{ color: '#D4AF37', fontWeight: 700, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.12em', mb: 1 }}>
-                              Strategy
-                            </Typography>
-                            <ul className="space-y-1.5">
-                              {c.strategy.map((s) => (
-                                <li key={s} style={{ color: isDark ? '#c7c7c7' : '#374151', fontSize: '0.95rem', lineHeight: 1.55 }}>
-                                  — {s}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div
-                          className="rounded-xl p-5 grid grid-cols-3 gap-4 border"
-                          style={{
-                            borderColor: isDark ? 'rgba(212,175,55,0.25)' : 'rgba(212,175,55,0.3)',
-                            backgroundColor: isDark ? 'rgba(212,175,55,0.06)' : 'rgba(212,175,55,0.08)',
-                          }}
-                        >
-                          {c.results.map((r) => (
-                            <div key={r.label}>
-                              <div style={{ color: '#D4AF37', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1 }}>{r.metric}</div>
-                              <div style={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '0.75rem', marginTop: 6, lineHeight: 1.4 }}>{r.label}</div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.article>
-                  );
-                })}
-              </div>
-            </Container>
-          </section>
-
-          <CTASection />
+            {/* Projects Grid */}
+            <Grid container spacing={4}>
+              {projects.map((project, index) => (
+                <Grid size={{ xs: 12, md: 6 }} key={project.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * index }}
+                  >
+                    <ProjectCard project={project} mode={mode} />
+                  </motion.div>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
         </main>
         <Footer />
-        <WhatsAppButton />
       </div>
     </>
+  );
+};
+
+const ProjectCard: React.FC<{ project: Project; mode: string }> = ({ project, mode }) => {
+  return (
+    <Box 
+      className="group rounded-2xl overflow-hidden h-full border card-hover"
+      sx={{
+        backgroundColor: mode === 'dark' ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)',
+        borderColor: mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
+      }}
+    >
+      {/* Image */}
+      <Box className="relative overflow-hidden" sx={{ aspectRatio: '16/10' }}>
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            width={1280}
+            height={800}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+        </a>
+        
+        {/* Category Badge */}
+        <Chip
+          label={project.category}
+          size="small"
+          sx={{
+            position: 'absolute',
+            top: 16,
+            left: 16,
+            backgroundColor: 'rgba(212, 175, 55, 0.9)',
+            color: '#0a0a0a',
+            fontWeight: 600,
+            fontSize: '0.7rem',
+          }}
+        />
+
+        {/* Hover overlay */}
+        <Box 
+          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          <Button
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            endIcon={<ExternalLink size={16} />}
+            sx={{
+              backgroundColor: '#D4AF37',
+              color: '#0a0a0a',
+              '&:hover': {
+                backgroundColor: '#E8C547',
+              },
+            }}
+          >
+            View Project
+          </Button>
+        </Box>
+      </Box>
+
+      {/* Content */}
+      <Box className="p-6">
+        <Typography 
+          variant="h5" 
+          className="mb-2"
+          sx={{ 
+            fontWeight: 700,
+            color: mode === 'dark' ? '#fff' : '#0a0a0a',
+          }}
+        >
+          {project.title}
+        </Typography>
+        <Typography 
+          variant="body2"
+          sx={{ 
+            color: mode === 'dark' ? '#a0a0a0' : '#666',
+            mb: 3,
+            lineHeight: 1.6,
+          }}
+        >
+          {project.description}
+        </Typography>
+
+        {/* Tech Tags */}
+        <Box className="flex flex-wrap gap-2">
+          {project.tech.map((tech, index) => (
+            <Chip
+              key={index}
+              label={tech}
+              size="small"
+              sx={{
+                backgroundColor: mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+                color: mode === 'dark' ? '#a0a0a0' : '#666',
+                fontSize: '0.75rem',
+              }}
+            />
+          ))}
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
