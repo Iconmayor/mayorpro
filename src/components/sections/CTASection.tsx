@@ -2,109 +2,113 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container, Typography, Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle, Calendar, Check } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 const CTASection: React.FC = () => {
   const { mode } = useTheme();
+  const isDark = mode === 'dark';
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hi! I'm interested in a free consultation for my business.");
-    window.open(`https://wa.me/15551234567?text=${message}`, '_blank');
+    const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my home service business.");
+    window.open(`https://wa.me/2349167587995?text=${message}`, '_blank');
   };
 
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* Background gradient */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(10, 10, 10, 1) 50%, rgba(212, 175, 55, 0.05) 100%)'
-            : 'linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(255, 255, 255, 1) 50%, rgba(212, 175, 55, 0.1) 100%)',
+          background: isDark
+            ? 'radial-gradient(800px 400px at 50% 0%, rgba(212,175,55,0.10), transparent 60%), #0a0a0a'
+            : 'radial-gradient(800px 400px at 50% 0%, rgba(212,175,55,0.15), transparent 60%), #ffffff',
         }}
       />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-primary/5 blur-3xl" />
-
       <Container maxWidth="md" className="relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
+          transition={{ duration: 0.5 }}
         >
-          <Typography 
-            variant="h2" 
-            className="font-display mb-4"
-            sx={{ 
-              fontSize: { xs: '2rem', md: '3rem' },
-              fontWeight: 700,
-              color: mode === 'dark' ? '#fff' : '#0a0a0a',
-              lineHeight: 1.2,
+          <Box
+            className="rounded-3xl p-8 md:p-14 text-center border"
+            sx={{
+              backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff',
+              borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+              boxShadow: '0 40px 80px -40px rgba(212,175,55,0.25)',
             }}
           >
-            Ready to <span className="text-primary">Transform</span> Your Business?
-          </Typography>
-          
-          <Typography 
-            variant="body1"
-            sx={{ 
-              color: mode === 'dark' ? '#a0a0a0' : '#666',
-              fontSize: '1.125rem',
-              maxWidth: '500px',
-              mx: 'auto',
-              mb: 5,
-              lineHeight: 1.7,
-            }}
-          >
-            Let's discuss how we can help you achieve your goals. Get a free consultation today.
-          </Typography>
+            <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
+              Free Strategy Call
+            </Typography>
+            <Typography
+              className="font-display"
+              sx={{
+                fontSize: { xs: '2rem', md: '3rem' },
+                fontWeight: 700,
+                letterSpacing: '-0.02em',
+                lineHeight: 1.1,
+                color: isDark ? '#fff' : '#0a0a0a',
+                mb: 3,
+              }}
+            >
+              Book your free <span className="text-primary">Visibility Audit.</span>
+            </Typography>
+            <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.05rem', maxWidth: '540px', mx: 'auto', mb: 5, lineHeight: 1.65 }}>
+              30 minutes. We'll show you exactly where your visibility gaps are, and what a Local Growth Engine would do for your business.
+            </Typography>
 
-          <Box className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              component={Link}
-              to="/contact"
-              variant="contained"
-              size="large"
-              endIcon={<ArrowRight size={18} />}
-              sx={{
-                backgroundColor: '#D4AF37',
-                color: '#0a0a0a',
-                px: 4,
-                py: 1.5,
-                fontWeight: 600,
-                '&:hover': {
-                  backgroundColor: '#E8C547',
-                },
-              }}
-            >
-              Get Free Consultation
-            </Button>
-            
-            <Button
-              onClick={handleWhatsApp}
-              variant="outlined"
-              size="large"
-              startIcon={<MessageCircle size={18} />}
-              sx={{
-                borderColor: mode === 'dark' ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)',
-                color: mode === 'dark' ? '#fff' : '#0a0a0a',
-                px: 4,
-                py: 1.5,
-                fontWeight: 600,
-                '&:hover': {
-                  borderColor: '#25D366',
-                  backgroundColor: 'rgba(37, 211, 102, 0.1)',
-                  color: '#25D366',
-                },
-              }}
-            >
-              Chat on WhatsApp
-            </Button>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto mb-8 text-left">
+              {[
+                'Local market & competitor scan',
+                'Google Business Profile review',
+                '90-day growth roadmap',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <Check size={18} className="text-primary flex-shrink-0 mt-0.5" />
+                  <span style={{ color: isDark ? '#d0d0d0' : '#374151', fontSize: '0.9rem' }}>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <Box className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button
+                component={Link}
+                to="/contact"
+                variant="contained"
+                size="large"
+                startIcon={<Calendar size={18} />}
+                sx={{
+                  backgroundColor: '#D4AF37',
+                  color: '#0a0a0a',
+                  px: 4,
+                  py: 1.6,
+                  borderRadius: '10px',
+                  fontWeight: 700,
+                  '&:hover': { backgroundColor: '#E8C547' },
+                }}
+              >
+                Book a Strategy Call
+              </Button>
+              <Button
+                onClick={handleWhatsApp}
+                variant="outlined"
+                size="large"
+                startIcon={<MessageCircle size={18} />}
+                sx={{
+                  borderColor: isDark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.18)',
+                  color: isDark ? '#fff' : '#0a0a0a',
+                  px: 4,
+                  py: 1.6,
+                  borderRadius: '10px',
+                  fontWeight: 600,
+                  '&:hover': { borderColor: '#25D366', color: '#25D366', backgroundColor: 'rgba(37,211,102,0.08)' },
+                }}
+              >
+                Chat on WhatsApp
+              </Button>
+            </Box>
           </Box>
         </motion.div>
       </Container>
