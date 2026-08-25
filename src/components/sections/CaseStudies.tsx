@@ -68,9 +68,12 @@ const CaseStudies: React.FC<Props> = ({ full = false }) => {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={c.image}
-                    alt={c.title}
+                    alt={c.imageAlt || c.title}
                     loading="lazy"
-                    className="w-full h-full object-cover"
+                    decoding="async"
+                    width={1600}
+                    height={1000}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
                   />
                   <div className="absolute top-3 left-3 flex gap-2">
                     <Chip
