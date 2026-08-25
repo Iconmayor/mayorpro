@@ -1,3 +1,10 @@
+import hvacImg from '@/assets/portfolio-hvac-website.jpg';
+import roofingImg from '@/assets/portfolio-roofing-website.jpg';
+import plumbingImg from '@/assets/portfolio-plumbing-website.jpg';
+import remodelingImg from '@/assets/portfolio-remodeling-website.jpg';
+import landscapingImg from '@/assets/portfolio-landscaping-website.jpg';
+import electricalImg from '@/assets/portfolio-electrical-website.jpg';
+
 export interface CaseStudy {
   id: number;
   slug: string;
@@ -6,6 +13,7 @@ export interface CaseStudy {
   title: string;
   headline: string;
   image: string;
+  imageAlt: string;
   challenge: string;
   strategy: string[];
   deliverables: string[];
@@ -20,7 +28,8 @@ export const caseStudies: CaseStudy[] = [
     location: "Phoenix, AZ",
     title: "From invisible to Map Pack #1 in 90 days",
     headline: "A residential HVAC operator scaling summer emergency calls.",
-    image: "/projects/ecommerce.jpg",
+    image: hvacImg,
+    imageAlt: "Concept project: HVAC company website with Google Map Pack and review widget",
     challenge:
       "Ranked outside the top 20 for high-intent searches like 'AC repair near me'. Great crews, weak digital footprint, phone quieter than the competition.",
     strategy: [
@@ -48,7 +57,8 @@ export const caseStudies: CaseStudy[] = [
     location: "Atlanta, GA",
     title: "Storm-season pipeline, engineered.",
     headline: "A regional roofer turning weather events into booked inspections.",
-    image: "/projects/social.jpg",
+    image: roofingImg,
+    imageAlt: "Concept project: roofing company website with free inspection booking form and before/after gallery",
     challenge:
       "Big storm demand, but leads leaked to national competitors with faster response times and stronger local presence online.",
     strategy: [
@@ -76,7 +86,8 @@ export const caseStudies: CaseStudy[] = [
     location: "Dallas, TX",
     title: "Owning 'plumber near me' across a metro.",
     headline: "A family plumbing company breaking into a saturated market.",
-    image: "/projects/ai-leads.jpg",
+    image: plumbingImg,
+    imageAlt: "Industry demo: plumbing website with city service pages and local SEO ranking dashboard",
     challenge:
       "Established competitors dominated Map Pack and organic results. Owner spent thousands monthly on ads with unclear ROI.",
     strategy: [
@@ -103,7 +114,8 @@ export const caseStudies: CaseStudy[] = [
     location: "Denver, CO",
     title: "Positioning a premium remodeler above the price war.",
     headline: "A design-build remodeler competing on craft, not cost.",
-    image: "/projects/branding.jpg",
+    image: remodelingImg,
+    imageAlt: "Concept project: design-build remodeling website with editorial project portfolio grid",
     challenge:
       "Beautiful work, but the brand and website looked like every other contractor in the market. Attracting bargain shoppers, not ideal clients.",
     strategy: [
@@ -131,7 +143,8 @@ export const caseStudies: CaseStudy[] = [
     location: "Tampa, FL",
     title: "A landscape company booked out for 6 months.",
     headline: "A boutique landscaper filling the calendar without ad spend.",
-    image: "/projects/seo.jpg",
+    image: landscapingImg,
+    imageAlt: "Industry demo: landscaping website with service-area suburb pages and booking calendar",
     challenge:
       "Relied on referrals. Zero digital pipeline. Wanted to scale without becoming a lead-gen dependency.",
     strategy: [
@@ -158,7 +171,8 @@ export const caseStudies: CaseStudy[] = [
     location: "Charlotte, NC",
     title: "Every lead answered in under a minute.",
     headline: "An electrical contractor closing more of the leads they already had.",
-    image: "/projects/automation.jpg",
+    image: electricalImg,
+    imageAlt: "Industry demo: electrical contractor website with AI lead-response automation dashboard",
     challenge:
       "Solid lead flow, but response times of 4+ hours meant 60% of inquiries went cold before follow-up.",
     strategy: [

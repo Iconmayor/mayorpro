@@ -77,8 +77,12 @@ const Projects: React.FC = () => {
                         >
                           <img
                             src={c.image}
-                            alt={c.title}
+                            alt={c.imageAlt || c.title}
                             loading="lazy"
+                            decoding="async"
+                            width={1600}
+                            height={1000}
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="w-full h-auto aspect-[16/10] object-cover"
                           />
                         </div>
