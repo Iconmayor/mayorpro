@@ -50,7 +50,7 @@ export const growthEngine: Phase[] = [
     tagline: "A website that books jobs.",
     outcome: "A fast, mobile-first site engineered to convert visitors into calls, form fills, and booked appointments.",
     description:
-      "Built around home service buyer psychology: instant clarity, local proof, mobile-optimized CTAs, and every page structured to convert.",
+      "Built around real buyer psychology: instant clarity, credible proof, mobile-optimized CTAs, and every page structured to convert.",
     deliverables: [
       "Custom design + development",
       "Service-area pages built for Local SEO",
