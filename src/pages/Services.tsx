@@ -19,7 +19,7 @@ const Services: React.FC = () => {
     <>
       <Helmet>
         <title>The Local Growth Engine™ | Able Digital</title>
-        <meta name="description" content="Seven phases. One system. How Able Digital builds a complete Local Growth Engine for home service businesses in the United States." />
+        <meta name="description" content="Seven phases. One system. How Able Digital builds a complete growth engine for businesses across industries — websites, Local SEO, reviews and AI visibility." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -50,7 +50,7 @@ const Services: React.FC = () => {
                 The Able Digital <span className="text-primary">Local Growth Engine™</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.15rem', lineHeight: 1.6, mb: 5, maxWidth: 640, mx: 'auto' }}>
-                Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system. Every phase compounds the next.
+                Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system for any business whose customers search before they buy. Every phase compounds the next.
               </Typography>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Button
@@ -61,7 +61,7 @@ const Services: React.FC = () => {
                   startIcon={<Calendar size={18} />}
                   sx={{ backgroundColor: '#D4AF37', color: '#0a0a0a', px: 3.5, py: 1.6, borderRadius: '10px', fontWeight: 700, '&:hover': { backgroundColor: '#E8C547' } }}
                 >
-                  Book a Strategy Call
+                  Grow Your Business
                 </Button>
                 <Button
                   component="a"

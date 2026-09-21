@@ -17,8 +17,8 @@ const About: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>About Able Digital — Growth Partner for Home Service Businesses</title>
-        <meta name="description" content="Able Digital is the growth partner for home service businesses in the United States. Systems, not tactics. Meet the studio behind the Local Growth Engine." />
+        <title>About Able Digital — Growth Partner for Ambitious Businesses</title>
+        <meta name="description" content="Able Digital is a growth partner for businesses that need to be found and trusted online — across home services, construction, real estate, automotive and professional services." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -46,7 +46,7 @@ const About: React.FC = () => {
                   mb: 3,
                 }}
               >
-                A growth partner built for <span className="text-primary">home service.</span>
+                A growth partner built for <span className="text-primary">business owners.</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.15rem', lineHeight: 1.65, maxWidth: 640, mx: 'auto' }}>
                 {aboutData.shortBio}
@@ -144,10 +144,10 @@ const About: React.FC = () => {
                     Who we serve
                   </Typography>
                   <Typography className="font-display" sx={{ fontSize: { xs: '1.75rem', md: '2.25rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, color: isDark ? '#fff' : '#0a0a0a', mb: 3 }}>
-                    Home service operators in the United States.
+                    Business owners across industries.
                   </Typography>
                   <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1rem', lineHeight: 1.7, mb: 3 }}>
-                    Established businesses, 3–50 employees, already generating revenue, ready to compound growth through disciplined systems.
+                    Established businesses already generating revenue and ready to compound growth through disciplined systems — with deep specialist experience in home services and construction.
                   </Typography>
                   <div className="flex flex-wrap gap-2">
                     {industries.map((i) => (
@@ -176,7 +176,7 @@ const About: React.FC = () => {
                     {[
                       'Businesses looking for a cheap website with no strategy.',
                       'Owners who want to "just try SEO for a month".',
-                      'Industries outside U.S. home service.',
+                      'Anyone expecting results without a clear offer or capacity to serve them.',
                       'Anyone unwilling to commit to a growth system.',
                     ].map((s) => (
                       <li key={s} className="flex items-start gap-3" style={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '0.98rem', lineHeight: 1.6 }}>

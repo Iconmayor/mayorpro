@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
   const isDark = mode === 'dark';
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my home service business.");
+    const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my business.");
     window.open(`https://wa.me/2349167587995?text=${message}`, '_blank');
   };
 
@@ -64,10 +64,10 @@ const Contact: React.FC = () => {
                       mb: 3,
                     }}
                   >
-                    Let's build your <span className="text-primary">Local Growth Engine.</span>
+                    Let's build your <span className="text-primary">digital presence.</span>
                   </Typography>
                   <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.15rem', lineHeight: 1.65, mb: 5 }}>
-                    30 minutes. No pressure. We'll audit your visibility live, share what's working in your market, and show you the fastest path to more qualified local leads.
+                    30 minutes. No pressure. We'll audit your visibility live, share what's working in your market, and show you the fastest path to more qualified enquiries.
                   </Typography>
 
                   <div className="mb-8">
@@ -95,8 +95,8 @@ const Contact: React.FC = () => {
                     </Typography>
                     <ul className="space-y-2">
                       {[
-                        'U.S. home service businesses (HVAC, roofing, plumbing, electrical, remodeling, etc.).',
-                        '3–50 employees, already operating with real revenue.',
+                        'Businesses in any industry — home services, construction, real estate, automotive, professional services, retail, education and more.',
+                        'Already operating with real revenue and capacity to serve new customers.',
                         'Owners ready to invest in a long-term growth partnership.',
                       ].map((i) => (
                         <li key={i} style={{ color: isDark ? '#a0a0a0' : '#6b7280', fontSize: '0.95rem', lineHeight: 1.55 }}>
