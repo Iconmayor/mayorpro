@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <Typography sx={{ mt: 2, color: isDark ? '#a0a0a0' : '#6b7280', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              The Local Growth Engine for home service businesses in the United States.
+              The Local Growth Engine for businesses that want to be found, trusted, and chosen online.
             </Typography>
           </div>
 

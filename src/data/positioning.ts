@@ -1,14 +1,14 @@
 export const positioning = {
   brand: "Able Digital",
-  category: "Local Growth Partner for Home Service Businesses",
-  promise: "Build Trust. Get Found. Generate More Qualified Local Leads.",
+  category: "Growth Partner for Local & Service-Led Businesses",
+  promise: "Build Trust. Get Found. Win More Customers.",
   hero: {
     eyebrow: "The Local Growth Engine",
-    headline: "Helping home service businesses generate more qualified local leads.",
-    sub: "One complete system for websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered to turn local search into booked jobs.",
-    primaryCta: { label: "Book a Strategy Call", href: "/contact" },
+    headline: "Helping businesses get found online and win more customers.",
+    sub: "One complete system for websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered to turn online searches into real enquiries.",
+    primaryCta: { label: "Start Your Project", href: "/contact" },
     secondaryCta: { label: "See the Growth System", href: "/services" },
-    trustLine: "Trusted by home service operators across the United States.",
+    trustLine: "Built for business owners across industries — with deep home-service expertise.",
   },
   metrics: [
     { value: "3.2×", label: "More qualified calls in 90 days" },
@@ -19,6 +19,12 @@ export const positioning = {
 };
 
 export const industries = [
+  "Home Services", "Construction", "Real Estate", "Automotive",
+  "Professional Services", "Local Retail", "Education", "Nonprofits",
+  "Hospitality", "Healthcare Practices", "E-Commerce", "Other Businesses",
+];
+
+export const homeServiceSpecialties = [
   "HVAC", "Roofing", "Plumbing", "Electrical", "Pest Control",
   "Remodeling", "Landscaping", "Garage Door", "Concrete", "Flooring",
   "Painting", "Windows & Doors", "Solar", "Pool", "General Contracting",
@@ -31,7 +37,7 @@ export const problemPoints = [
   },
   {
     title: "A website that looks nice but doesn't sell.",
-    body: "Traffic without qualified calls is a cost, not a channel. Most home service sites are brochures — not booking engines.",
+    body: "Traffic without enquiries is a cost, not a channel. Most business websites are brochures — not enquiry engines.",
   },
   {
     title: "Leads slipping through the cracks.",

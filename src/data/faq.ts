@@ -1,11 +1,11 @@
 export const faqs = [
   {
     q: "Who do you work with?",
-    a: "Established home service businesses in the United States — HVAC, roofing, plumbing, electrical, remodeling, landscaping, and similar trades — typically with 3 to 50 employees and existing revenue.",
+    a: "Established businesses that depend on being found and trusted online — home services and construction, real estate, automotive, professional services, local retail, schools and organizations. Home services remain a deep specialty, not a limit.",
   },
   {
     q: "How is Able Digital different from a web design agency?",
-    a: "We don't sell websites — we sell a complete Local Growth Engine. The website is one piece. Local SEO, Google Business Profile, reviews, AI visibility, and follow-up all work as one system focused on one outcome: qualified local leads.",
+    a: "We don't sell websites — we sell a complete growth system. The website is one piece. Local SEO, Google Business Profile, reviews, AI visibility, and follow-up all work together toward one outcome: more qualified enquiries.",
   },
   {
     q: "How long before I see results?",

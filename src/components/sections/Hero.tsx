@@ -62,8 +62,8 @@ const Hero: React.FC = () => {
                 marginBottom: '1.25rem',
               }}
             >
-              Helping home service businesses generate{' '}
-              <span className="text-primary">more qualified local leads.</span>
+              Helping businesses get found online and{' '}
+              <span className="text-primary">win more customers.</span>
             </motion.h1>
 
             <motion.p
