@@ -10,7 +10,7 @@ import { useTheme } from '@/context/ThemeContext';
 
 const navItems = [
   { label: 'Growth System', path: '/services' },
-  { label: 'Case Studies', path: '/projects' },
+  { label: 'Our Work', path: '/projects' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ];
