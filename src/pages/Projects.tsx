@@ -16,8 +16,8 @@ const Projects: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies | Able Digital — Local Growth for Home Services</title>
-        <meta name="description" content="Real home service operators. Real results. See how Able Digital's Local Growth Engine turned local search into booked jobs." />
+        <title>Work & Case Studies | Able Digital</title>
+        <meta name="description" content="Websites, marketing, SEO, design and automation work across industries — plus in-depth case studies from Able Digital's Local Growth Engine." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
           >
             <Container maxWidth="md" className="text-center">
               <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-                Case Studies
+                Our Work
               </Typography>
               <Typography
                 className="font-display"
@@ -45,10 +45,10 @@ const Projects: React.FC = () => {
                   mb: 3,
                 }}
               >
-                Home service operators <span className="text-primary">winning locally.</span>
+                Businesses <span className="text-primary">winning online.</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: 620, mx: 'auto' }}>
-                Every engagement is measured. Every result is real. Here's what the Local Growth Engine looks like in production.
+                Web development, marketing, SEO, design and automation work across industries — plus in-depth case studies showing the Local Growth Engine in production.
               </Typography>
             </Container>
           </section>

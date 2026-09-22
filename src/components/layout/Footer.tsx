@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             © {year} Able Digital. All rights reserved.
           </Typography>
           <Typography sx={{ color: isDark ? '#7a7a7a' : '#9ca3af', fontSize: '0.8rem' }}>
-            Build Trust. Get Found. Generate More Qualified Local Leads.
+            Build Trust. Get Found. Win More Customers.
           </Typography>
         </div>
       </Container>

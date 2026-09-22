@@ -49,7 +49,7 @@ export const comparison = {
   columns: ["Freelancer", "Typical Agency", "Able Digital"],
   rows: [
     { label: "Focus", values: ["Deliverables", "Retainers", "Qualified local leads"] },
-    { label: "Strategy", values: ["None", "Templated", "Home-service specific"] },
+    { label: "Strategy", values: ["None", "Templated", "Built around your industry"] },
     { label: "Website", values: ["Template", "Custom design", "Conversion-engineered"] },
     { label: "Local SEO", values: ["Basic", "Add-on", "Core discipline"] },
     { label: "Google Business Profile", values: ["Rarely", "Optional", "Fully optimized & managed"] },
