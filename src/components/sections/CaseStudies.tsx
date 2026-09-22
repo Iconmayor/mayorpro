@@ -33,7 +33,7 @@ const CaseStudies: React.FC<Props> = ({ full = false }) => {
                 color: isDark ? '#fff' : '#0a0a0a',
               }}
             >
-              Real operators. <span className="text-primary">Real results.</span>
+              Real businesses. <span className="text-primary">Real results.</span>
             </Typography>
           </div>
           {!full && (

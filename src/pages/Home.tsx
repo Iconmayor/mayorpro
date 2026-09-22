@@ -18,8 +18,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Able Digital — The Local Growth Engine for Home Service Businesses</title>
-        <meta name="description" content="Able Digital is the growth partner for U.S. home service businesses. Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system for qualified local leads." />
+        <title>Able Digital — The Local Growth Engine for Growing Businesses</title>
+        <meta name="description" content="Able Digital is a growth partner for businesses across industries. Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system for more qualified enquiries." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />

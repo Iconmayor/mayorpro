@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CTASection from '@/components/sections/CTASection';
 import { caseStudies } from '@/data/caseStudies';
+import { projects } from '@/data/projects';
 import { useTheme } from '@/context/ThemeContext';
 
 const Projects: React.FC = () => {
@@ -16,8 +17,8 @@ const Projects: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies | Able Digital — Local Growth for Home Services</title>
-        <meta name="description" content="Real home service operators. Real results. See how Able Digital's Local Growth Engine turned local search into booked jobs." />
+        <title>Work & Case Studies | Able Digital</title>
+        <meta name="description" content="Websites, marketing, SEO, design and automation work across industries — plus in-depth case studies from Able Digital's Local Growth Engine." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -32,7 +33,7 @@ const Projects: React.FC = () => {
           >
             <Container maxWidth="md" className="text-center">
               <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-                Case Studies
+                Our Work
               </Typography>
               <Typography
                 className="font-display"
@@ -45,16 +46,91 @@ const Projects: React.FC = () => {
                   mb: 3,
                 }}
               >
-                Home service operators <span className="text-primary">winning locally.</span>
+                Businesses <span className="text-primary">winning online.</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: 620, mx: 'auto' }}>
-                Every engagement is measured. Every result is real. Here's what the Local Growth Engine looks like in production.
+                Web development, marketing, SEO, design and automation work across industries — plus in-depth case studies showing the Local Growth Engine in production.
               </Typography>
             </Container>
           </section>
 
           <section className="section-padding">
             <Container maxWidth="lg">
+              <div className="mb-12 max-w-2xl">
+                <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
+                  Selected Digital Projects
+                </Typography>
+                <Typography className="font-display" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: isDark ? '#fff' : '#0a0a0a', mb: 2 }}>
+                  Work across industries.
+                </Typography>
+                <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1rem', lineHeight: 1.65 }}>
+                  Websites, marketing, SEO, brand design and automation builds — the same system applied to different types of businesses.
+                </Typography>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
+                {projects.map((p, i) => (
+                  <motion.div
+                    key={p.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
+                  >
+                    <Box
+                      className="rounded-2xl border overflow-hidden h-full flex flex-col"
+                      sx={{
+                        backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff',
+                        borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+                      }}
+                    >
+                      <div className="relative aspect-[16/10] overflow-hidden">
+                        <img
+                          src={p.image}
+                          alt={`${p.category} project: ${p.title}`}
+                          loading="lazy"
+                          decoding="async"
+                          width={1600}
+                          height={1000}
+                          sizes="(max-width: 1024px) 100vw, 33vw"
+                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
+                        />
+                        <div className="absolute top-3 left-3">
+                          <Chip
+                            label={p.category}
+                            size="small"
+                            sx={{ backgroundColor: 'rgba(212,175,55,0.95)', color: '#0a0a0a', fontWeight: 700, fontSize: '0.7rem' }}
+                          />
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: isDark ? '#fff' : '#0a0a0a', letterSpacing: '-0.01em', mb: 1.5 }}>
+                          {p.title}
+                        </Typography>
+                        <Typography sx={{ color: isDark ? '#a0a0a0' : '#4b5563', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                          {p.description}
+                        </Typography>
+                      </div>
+                    </Box>
+                  </motion.div>
+                ))}
+              </div>
+              <Typography sx={{ color: isDark ? '#7a7a7a' : '#6b7280', fontSize: '0.8rem' }}>
+                Selected project work. Some entries are concept projects or industry demos.
+              </Typography>
+            </Container>
+          </section>
+
+          <section className="section-padding" style={{ backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)' }}>
+            <Container maxWidth="lg">
+              <div className="mb-12 max-w-2xl">
+                <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
+                  Case Studies
+                </Typography>
+                <Typography className="font-display" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: isDark ? '#fff' : '#0a0a0a' }}>
+                  The Growth Engine in depth.
+                </Typography>
+              </div>
               <div className="space-y-16 md:space-y-24">
                 {caseStudies.map((c, i) => {
                   const flip = i % 2 === 1;

@@ -40,7 +40,7 @@ const GrowthEngine: React.FC<Props> = ({ detailed = false }) => {
             One system. Seven phases. <span className="text-primary">Compounding growth.</span>
           </Typography>
           <Typography sx={{ color: isDark ? '#a0a0a0' : '#4b5563', fontSize: '1.05rem', lineHeight: 1.65 }}>
-            Every phase is engineered to work with the next. Together they turn local search into booked jobs — month after month.
+            Every phase is engineered to work with the next. Together they turn online searches into real enquiries — month after month.
           </Typography>
         </div>
 
