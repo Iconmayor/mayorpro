@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CTASection from '@/components/sections/CTASection';
+import WebsitePortfolio from '@/components/sections/WebsitePortfolio';
 import { caseStudies } from '@/data/caseStudies';
 import { projects } from '@/data/projects';
 import { useTheme } from '@/context/ThemeContext';
@@ -53,6 +54,8 @@ const Projects: React.FC = () => {
               </Typography>
             </Container>
           </section>
+
+          <WebsitePortfolio />
 
           <section className="section-padding">
             <Container maxWidth="lg">
