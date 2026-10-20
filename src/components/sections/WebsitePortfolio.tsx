@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import { Container, Typography, Chip } from '@mui/material';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import { portfolioSites } from '@/data/portfolio';
 import { useTheme } from '@/context/ThemeContext';
 
-const WebsitePortfolio: React.FC = () => {
+const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
   const { mode } = useTheme();
   const isDark = mode === 'dark';
   const cats = ['All Projects', ...Array.from(new Set(portfolioSites.map((s) => s.category)))];
   const [active, setActive] = useState('All Projects');
-  const list = active === 'All Projects' ? portfolioSites : portfolioSites.filter((s) => s.category === active);
+  const filtered = active === 'All Projects' ? portfolioSites : portfolioSites.filter((s) => s.category === active);
+  const list = limit ? filtered.slice(0, limit) : filtered;
 
   return (
-    <section className="section-padding" id="portfolio">
+    <section className="section-padding" id={limit ? "our-work" : "portfolio"}>
       <Container maxWidth="lg">
         <div className="mb-8 max-w-2xl">
           <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-            Website Portfolio
+            {limit ? 'Our Work' : 'Website Portfolio'}
           </Typography>
           <Typography className="font-display" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: isDark ? '#fff' : '#0a0a0a', mb: 2 }}>
             Websites by ABLE DIGITAL.
@@ -26,7 +29,7 @@ const WebsitePortfolio: React.FC = () => {
           </Typography>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        {!limit && <div className="flex flex-wrap gap-2 mb-8">
           {cats.map((c) => (
             <Chip
               key={c}
@@ -40,7 +43,7 @@ const WebsitePortfolio: React.FC = () => {
               }}
             />
           ))}
-        </div>
+        </div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {list.map((s) => (
@@ -71,6 +74,14 @@ const WebsitePortfolio: React.FC = () => {
             </div>
           ))}
         </div>
+        {limit && (
+          <div className="text-center mt-12">
+            <Button component={Link} to="/projects" variant="outlined" size="large" endIcon={<ArrowRight size={18} />}
+              sx={{ borderColor: '#D4AF37', color: '#D4AF37', px: 4, py: 1.5, fontWeight: 600, '&:hover': { borderColor: '#E8C547', backgroundColor: 'rgba(212,175,55,0.1)' } }}>
+              View All {portfolioSites.length} Websites
+            </Button>
+          </div>
+        )}
       </Container>
     </section>
   );
