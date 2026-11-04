@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
                       <ContactCard
                         icon={<MessageCircle size={18} />}
                         title="WhatsApp / Call"
-                        value="+234 916 758 7995"
+                        value="+44 7988 373847"
                         onClick={handleWhatsApp}
                         isDark={isDark}
                         accent="#25D366"
