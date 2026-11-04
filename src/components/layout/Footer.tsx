@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
                   Iconmayor1@gmail.com
                 </a>
               </li>
-              <li>Serving the United States</li>
+              <li>Serving clients worldwide — remote</li>
               <li>
                 <a href="https://wa.me/447988373847" target="_blank" rel="noreferrer" className="no-underline" style={{ color: 'inherit' }}>
                   WhatsApp us

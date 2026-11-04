@@ -179,7 +179,7 @@ const Contact: React.FC = () => {
                       <ContactCard
                         icon={<MapPin size={18} />}
                         title="Serving"
-                        value="United States (remote)"
+                        value="Worldwide (remote)"
                         isDark={isDark}
                       />
                       <ContactCard
