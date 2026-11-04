@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my business.");
-    window.open(`https://wa.me/2349167587995?text=${message}`, '_blank');
+    window.open(`https://wa.me/447988373847?text=${message}`, '_blank');
   };
 
   const handleEmail = () => {
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
                       <ContactCard
                         icon={<MessageCircle size={18} />}
                         title="WhatsApp / Call"
-                        value="+234 916 758 7995"
+                        value="+44 7988 373847"
                         onClick={handleWhatsApp}
                         isDark={isDark}
                         accent="#25D366"

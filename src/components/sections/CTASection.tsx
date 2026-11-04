@@ -11,7 +11,7 @@ const CTASection: React.FC = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my business.");
-    window.open(`https://wa.me/2349167587995?text=${message}`, '_blank');
+    window.open(`https://wa.me/447988373847?text=${message}`, '_blank');
   };
 
   return (

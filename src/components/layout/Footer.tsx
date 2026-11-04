@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               </li>
               <li>Serving the United States</li>
               <li>
-                <a href="https://wa.me/2349167587995" target="_blank" rel="noreferrer" className="no-underline" style={{ color: 'inherit' }}>
+                <a href="https://wa.me/447988373847" target="_blank" rel="noreferrer" className="no-underline" style={{ color: 'inherit' }}>
                   WhatsApp us
                 </a>
               </li>
