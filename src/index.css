@@ -108,6 +108,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Keep hash/section targets visible below the fixed navbar */
+  [id] {
+    scroll-margin-top: 88px;
+  }
 }
 
 @layer components {
