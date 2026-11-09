@@ -1,166 +1,81 @@
-import React, { useState } from 'react';
-import { Container, Typography, Chip, Button } from '@mui/material';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import React from 'react';
+import { Container, Typography, Button } from '@mui/material';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { portfolioSites } from '@/data/portfolio';
 import { useTheme } from '@/context/ThemeContext';
 
-type WorkExample = {
-  id: string;
-  category: string;
-  title: string;
-  description: string;
-  image: string;
-  imageAlt: string;
-  label: string;
-  url?: string;
-};
-
-const websiteReferences: WorkExample[] = ['De-Brooks', 'Light Nation', 'ARC SolarX']
-  .map((name) => portfolioSites.find((site) => site.title === name))
-  .filter((site): site is NonNullable<typeof site> => Boolean(site))
-  .map((site) => ({
-    id: site.title,
-    category: 'Websites & Landing Pages',
-    title: site.title,
-    description: site.description,
-    image: site.image,
-    imageAlt: site.title + ' website screenshot',
-    label: 'Website example · Scope on request',
-    url: site.url,
-  }));
-
-// These are photographic illustrations of service types, NOT claims of client delivery.
-// Replace with permission-cleared screenshots as authentic project examples become available.
-const illustrativeServices: WorkExample[] = [
-  {
-    id: 'lead-generation',
-    category: 'Lead Generation',
-    title: 'Customer Acquisition & Lead Funnel Planning',
-    description: 'Illustrative example: research the buyer, define the offer, design a lead form and track enquiries through the sales process.',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Real stock photo of professionals planning a business campaign',
-    label: 'Illustrative service example · Stock photography',
-  },
-  {
-    id: 'google-ads',
-    category: 'Google Ads & Local SEO',
-    title: 'Google Ads Campaign & Search Visibility',
-    description: 'Illustrative example: plan intent-led campaigns, improve local presence, and measure calls and enquiries instead of just clicks.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Real stock photo of a laptop displaying digital analytics',
-    label: 'Illustrative service example · Stock photography',
-  },
-  {
-    id: 'landing-pages',
-    category: 'Websites & Landing Pages',
-    title: 'High-Converting Landing Page Experience',
-    description: 'Illustrative example: build a focused offer, service proof, mobile-first enquiry form and clear calls to action.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Real stock photo of a laptop in a modern website development workspace',
-    label: 'Illustrative service example · Stock photography',
-  },
-  {
-    id: 'crm-automation',
-    category: 'CRM & Booking Automation',
-    title: 'Lead Follow-Up & Appointment Workflow',
-    description: 'Illustrative example: connect enquiry forms, CRM stages, reminders and booking notifications to reduce missed opportunities.',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Real stock photo of professionals coordinating work',
-    label: 'Illustrative service example · Stock photography',
-  },
-  {
-    id: 'reputation',
-    category: 'Reputation & Review Growth',
-    title: 'Customer Feedback & Reputation Building',
-    description: 'Illustrative example: develop an authentic review-request process and build stronger confidence through genuine customer feedback.',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Real stock photo of a professional team working together',
-    label: 'Illustrative service example · Stock photography',
-  },
+// Pinterest is a discovery/reference library, not a licensed asset library.
+// These are real stock photographs; external Pinterest searches open the visual
+// inspiration for each service without republishing a pin or misrepresenting
+// somebody else's work as an Able Digital client project.
+const inspirations = [
+  { title:'Google Ads campaign dashboards', category:'Paid Search & Lead Generation',
+    outcome:'Understand spend, clicks and meaningful enquiries.',
+    image:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85',
+    query:'google ads campaign dashboard screenshot',
+    alt:'Real stock photograph of a computer showing business marketing analytics' },
+  { title:'Google Business Profile & local SEO', category:'Search Visibility',
+    outcome:'See how local discovery and customer actions are measured.',
+    image:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85',
+    query:'google business profile seo insights report',
+    alt:'Real stock image showing data reporting on a digital screen' },
+  { title:'Lead capture & landing-page funnels', category:'Customer Acquisition',
+    outcome:'Explore focused forms and buyer journeys built around enquiries.',
+    image:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85',
+    query:'lead generation landing page form funnel design',
+    alt:'Real photograph of a desktop web-development workspace' },
+  { title:'CRM pipeline & opportunity tracking', category:'Lead Management',
+    outcome:'Visualize a lead moving from first contact to appointment.',
+    image:'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85',
+    query:'crm sales pipeline kanban dashboard screenshot',
+    alt:'Real stock photograph of a professional team planning work' },
+  { title:'Booking & follow-up workflows', category:'Booking Automation',
+    outcome:'Understand reminders, calendars and connected conversations.',
+    image:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85',
+    query:'appointment booking automation workflow dashboard',
+    alt:'Real photograph of coworkers coordinating a business workflow' },
+  { title:'Reviews & online reputation', category:'Trust & Retention',
+    outcome:'See customer feedback presentation and review workflows.',
+    image:'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85',
+    query:'google reviews reputation management dashboard',
+    alt:'Real stock photograph of professionals collaborating' },
 ];
 
-const categories = ['All', 'Websites & Landing Pages', 'Lead Generation', 'Google Ads & Local SEO', 'CRM & Booking Automation', 'Reputation & Review Growth'];
-
-const WorkShowcase: React.FC<{ compact?: boolean }> = ({ compact = false }) => {
-  const { mode } = useTheme();
-  const dark = mode === 'dark';
-  const [filter, setFilter] = useState('All');
-  const allWork = compact ? [websiteReferences[0], ...illustrativeServices].filter(Boolean) : [...websiteReferences, ...illustrativeServices];
-  const filtered = filter === 'All' ? allWork : allWork.filter((item) => item.category === filter);
-  const muted = dark ? '#b3b3b3' : '#4b5563';
-
-  return (
-    <section id="our-work" className="section-padding" style={{ background: dark ? 'rgba(255,255,255,0.02)' : '#f8f8f8' }}>
-      <Container maxWidth="lg">
-        <div className="max-w-3xl mb-10">
-          <Typography sx={{ color: '#D4AF37', letterSpacing: 2, fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-            Our Work & Service Examples
-          </Typography>
-          <Typography className="font-display" sx={{ color: dark ? '#fff' : '#111', fontWeight: 750, fontSize: { xs: '2rem', md: '2.8rem' }, lineHeight: 1.14, mb: 2 }}>
-            More than websites. <span className="text-primary">Solutions built around business growth.</span>
-          </Typography>
-          <Typography sx={{ color: muted, fontSize: '1rem', lineHeight: 1.75 }}>
-            Explore website references and examples of the services we offer: lead generation, Google Ads, local search, landing pages, booking automation and review growth. Illustrative cards show service concepts, not completed client campaigns.
-          </Typography>
+const WorkShowcase: React.FC<{compact?:boolean}> = ({compact=false}) => {
+  const {mode} = useTheme();
+  const dark = mode==='dark';
+  const muted = dark?'#b7b7b7':'#565b64';
+  const items = compact?inspirations.slice(0,3):inspirations;
+  return <section id="service-inspiration" className="section-padding" style={{background:dark?'#101010':'#f9f8f5'}}>
+    <Container maxWidth="lg">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+        <div className="max-w-2xl">
+          <Typography sx={{color:'#D4AF37',fontWeight:800,fontSize:'.75rem',letterSpacing:2,textTransform:'uppercase',mb:2}}>More Than Website Design</Typography>
+          <Typography className="font-display" sx={{color:dark?'#fff':'#111',fontWeight:750,fontSize:{xs:'2rem',md:'2.7rem'},lineHeight:1.12,mb:2}}>Explore the systems behind <span className="text-primary">more customers.</span></Typography>
+          <Typography sx={{color:muted,lineHeight:1.7}}>Visual references for the other services we provide, inspired by real dashboard and funnel examples found through Pinterest. These are reference concepts—not completed Able Digital client projects or performance screenshots.</Typography>
         </div>
-        {!compact && (
-          <div className="flex flex-wrap gap-2 mb-8" aria-label="Filter work examples by service">
-            {categories.map((category) => (
-              <Chip key={category} label={category} clickable onClick={() => setFilter(category)}
-                sx={{
-                  background: filter === category ? '#D4AF37' : dark ? 'rgba(255,255,255,0.08)' : '#ebebeb',
-                  color: filter === category ? '#111' : dark ? '#eee' : '#333',
-                  fontWeight: 650,
-                  '&:hover': { background: filter === category ? '#e8c547' : dark ? 'rgba(212,175,55,0.2)' : '#e0e0e0' },
-                }}
-              />
-            ))}
+        {compact && <Button component={Link} to="/projects" variant="outlined" endIcon={<ArrowRight size={17}/>} sx={{alignSelf:'start',borderColor:'#D4AF37',color:'#D4AF37',whiteSpace:'nowrap'}}>View all categories</Button>}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {items.map((item,i)=><article key={item.title} className="rounded-3xl overflow-hidden border flex flex-col group" style={{background:dark?'#171717':'#fff',borderColor:dark?'rgba(255,255,255,.1)':'#e9e7e1',boxShadow:dark?'none':'0 16px 40px -34px rgba(20,20,20,.35)'}}>
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <img src={item.image} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute top-4 left-4 rounded-full px-3 py-1.5 text-xs font-bold" style={{color:'#111',background:'#D4AF37'}}>{item.category}</div>
           </div>
-        )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((work) => (
-            <article key={work.id} className="rounded-2xl border flex flex-col overflow-hidden group"
-              style={{ background: dark ? '#151515' : '#fff', borderColor: dark ? 'rgba(255,255,255,0.09)' : 'rgba(0,0,0,0.08)' }}>
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img src={work.image} alt={work.imageAlt} loading="lazy" decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
-                <span className="absolute left-3 top-3 px-3 py-1.5 rounded-md text-xs font-bold text-black" style={{ background: '#D4AF37' }}>
-                  {work.category}
-                </span>
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <Typography sx={{ color: muted, fontSize: '0.72rem', mb: 1.4 }}>{work.label}</Typography>
-                <Typography sx={{ fontWeight: 750, lineHeight: 1.3, fontSize: '1.12rem', color: dark ? '#fff' : '#111', mb: 2 }}>
-                  {work.title}
-                </Typography>
-                <Typography sx={{ color: muted, lineHeight: 1.7, fontSize: '0.9rem', mb: 3, flex: 1 }}>
-                  {work.description}
-                </Typography>
-                {work.url ? (
-                  <a href={work.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold no-underline text-primary">
-                    View website <ArrowUpRight size={16} />
-                  </a>
-                ) : (
-                  <Link to="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold no-underline text-primary">
-                    Discuss this solution <ArrowRight size={16} />
-                  </Link>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
-          <p className="text-xs max-w-2xl leading-relaxed" style={{ color: muted }}>
-            Visual examples are clearly marked. Stock photographs are not presented as client deliverables, and no campaign metrics or testimonials are fabricated.
-          </p>
-          {compact && <Button component={Link} to="/projects" variant="outlined" endIcon={<ArrowRight size={17} />}
-            sx={{ whiteSpace: 'nowrap', color: '#D4AF37', borderColor: '#D4AF37', '&:hover': { borderColor: '#e8c547', background: 'rgba(212,175,55,0.08)' } }}>
-            Explore all our work
-          </Button>}
-        </div>
-      </Container>
-    </section>
-  );
+          <div className="p-6 flex flex-col flex-1">
+            <span className="text-xs font-bold tracking-wider uppercase mb-3" style={{color:'#b18e2c'}}>SERVICE REFERENCE / 0{i+1}</span>
+            <h3 className="text-xl font-bold leading-snug" style={{color:dark?'#fff':'#101010'}}>{item.title}</h3>
+            <p className="text-sm mt-3 mb-6 leading-relaxed flex-1" style={{color:muted}}>{item.outcome}</p>
+            <a target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-semibold text-sm no-underline text-primary" href={'https://www.pinterest.com/search/pins/?q='+encodeURIComponent(item.query)}>
+              Explore visual references on Pinterest <ArrowUpRight size={16}/>
+            </a>
+          </div>
+        </article>)}
+      </div>
+      <div className="mt-7 rounded-xl border px-5 py-4" style={{borderColor:dark?'rgba(255,255,255,.1)':'#e6e3d9',color:muted}}>
+        <p className="text-sm leading-relaxed"><strong style={{color:dark?'#fff':'#111'}}>Portfolio transparency:</strong> The photographs are real stock images, not AI-generated. Pinterest links are third-party design references, not completed campaigns or client testimonials. Actual client screenshots and verified performance results will replace illustrative content only when permission and evidence are available.</p>
+      </div>
+    </Container>
+  </section>;
 };
 export default WorkShowcase;

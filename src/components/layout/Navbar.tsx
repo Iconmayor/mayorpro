@@ -37,7 +37,8 @@ const Navbar: React.FC = () => {
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ minHeight: { xs: 64, md: 72 }, display: 'flex', justifyContent: 'space-between' }}>
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 no-underline">
+            <Link to="/" className="flex items-center gap-2.5 no-underline" aria-label="Able Digital home">
+              <img src="/brand/able-digital-logo.webp" alt="Able Digital gold AD monogram logo" width={42} height={42} className="h-11 w-11 object-cover rounded-lg border border-primary/20" />
               <span
                 className="font-display font-bold tracking-tight"
                 style={{ color: isDark ? '#fff' : '#0a0a0a', fontSize: '1.15rem', letterSpacing: '-0.02em' }}
@@ -136,7 +137,8 @@ const Navbar: React.FC = () => {
         }}
       >
         <Box className="p-4 flex items-center justify-between border-b" sx={{ borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' }}>
-          <Link to="/" onClick={toggle} className="no-underline">
+          <Link to="/" onClick={toggle} className="no-underline flex items-center gap-2">
+            <img src="/brand/able-digital-logo.webp" alt="Able Digital logo" width={40} height={40} className="h-10 w-10 object-cover rounded-lg" />
             <span className="font-display font-bold" style={{ color: isDark ? '#fff' : '#0a0a0a', fontSize: '1.05rem' }}>
               Able<span style={{ color: '#D4AF37' }}>Digital</span>
             </span>

@@ -12,20 +12,20 @@ const Hero: React.FC = () => {
   const isDark = mode === 'dark';
 
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-24 pb-16 md:pb-24">
+    <section className="relative overflow-hidden pt-20 md:pt-28 pb-20 md:pb-28">
       {/* Background */}
       <div
         className="absolute inset-0"
         style={{
           background: isDark
             ? 'radial-gradient(1200px 600px at 80% -10%, rgba(212,175,55,0.10), transparent 60%), linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 6%) 100%)'
-            : 'radial-gradient(1200px 600px at 80% -10%, rgba(59,130,246,0.10), transparent 60%), linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%)',
+            : 'radial-gradient(1200px 600px at 80% -10%, rgba(212,175,55,0.10), transparent 60%), linear-gradient(180deg, #ffffff 0%, #faf8f1 100%)',
         }}
       />
       <div className="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-primary/10 blur-3xl" />
 
       <Container maxWidth="lg" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* LEFT */}
           <div className="lg:col-span-6">
             <motion.div
@@ -168,16 +168,16 @@ const Hero: React.FC = () => {
                 className="absolute -inset-4 rounded-3xl blur-2xl opacity-60"
                 style={{
                   background:
-                    'radial-gradient(closest-side, rgba(59,130,246,0.25), transparent 70%)',
+                    'radial-gradient(closest-side, rgba(212,175,55,0.25), transparent 70%)',
                 }}
               />
               <div
-                className="relative rounded-2xl overflow-hidden border"
+                className="relative rounded-[28px] overflow-hidden border"
                 style={{
                   borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
                   boxShadow: isDark
                     ? '0 40px 80px -30px rgba(0,0,0,0.8)'
-                    : '0 40px 80px -30px rgba(15,23,42,0.25)',
+                    : '0 40px 80px -30px rgba(25,22,12,0.24)',
                 }}
               >
                 <img

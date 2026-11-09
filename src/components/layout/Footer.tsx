@@ -21,7 +21,8 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="md:col-span-2 max-w-sm">
-            <Link to="/" className="no-underline">
+            <Link to="/" className="no-underline flex items-center gap-3">
+              <img src="/brand/able-digital-logo.webp" alt="Able Digital gold AD logo" width={72} height={72} className="h-[72px] w-[72px] rounded-xl object-cover" />
               <span className="font-display font-bold text-xl" style={{ color: isDark ? '#fff' : '#0a0a0a', letterSpacing: '-0.02em' }}>
                 Able<span style={{ color: '#D4AF37' }}>Digital</span>
               </span>
