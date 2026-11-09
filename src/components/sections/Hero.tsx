@@ -5,7 +5,7 @@ import { ArrowRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { positioning, industries } from '@/data/positioning';
 import { useTheme } from '@/context/ThemeContext';
-import heroImage from '@/assets/hero-growth-engine.jpg';
+const heroImage = 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=85';
 
 const Hero: React.FC = () => {
   const { mode } = useTheme();
@@ -62,8 +62,8 @@ const Hero: React.FC = () => {
                 marginBottom: '1.25rem',
               }}
             >
-              Helping businesses get found online and{' '}
-              <span className="text-primary">win more customers.</span>
+              More qualified leads.{' '}
+              <span className="text-primary">More booked jobs.</span> Real business growth.
             </motion.h1>
 
             <motion.p
@@ -182,12 +182,17 @@ const Hero: React.FC = () => {
               >
                 <img
                   src={heroImage}
-                  alt="Able Digital Local Growth Engine dashboard preview"
+                  alt="Professionals collaborating on a business growth strategy"
                   width={1600}
                   height={1200}
-                  className="w-full h-auto block"
+                  className="w-full h-full object-cover block aspect-[5/4]"
                 />
+                <div className="absolute bottom-4 left-4 right-4 rounded-xl px-5 py-4 border border-white/20 backdrop-blur" style={{background:"rgba(10,10,10,0.84)"}}>
+                  <p className="font-bold text-white">Turn attention into appointments.</p>
+                  <p className="text-sm text-gray-300 mt-1">Attract → Convert → Follow up → Book</p>
+                </div>
               </div>
+              <p className="mt-2 text-xs text-right" style={{color:isDark?"#969696":"#666"}}>Illustrative stock photography</p>
             </div>
           </motion.div>
         </div>

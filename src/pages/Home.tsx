@@ -9,9 +9,9 @@ import ProblemSection from '@/components/sections/ProblemSection';
 import GrowthEngine from '@/components/sections/GrowthEngine';
 import Outcomes from '@/components/sections/Outcomes';
 import WebsitePortfolio from '@/components/sections/WebsitePortfolio';
-import CaseStudies from '@/components/sections/CaseStudies';
+
 import Comparison from '@/components/sections/Comparison';
-import Testimonials from '@/components/sections/Testimonials';
+import AcquisitionServices from '@/components/sections/AcquisitionServices';
 import FAQ from '@/components/sections/FAQ';
 import CTASection from '@/components/sections/CTASection';
 
@@ -19,8 +19,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Able Digital — The Local Growth Engine for Growing Businesses</title>
-        <meta name="description" content="Able Digital is a growth partner for businesses across industries. Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system for more qualified enquiries." />
+        <title>Able Digital | Qualified Leads, Booked Jobs & Business Growth</title>
+        <meta name="description" content="Able Digital helps service businesses generate qualified enquiries through Google Ads, Local SEO, high-converting websites, CRM follow-up, and customer review growth." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -28,12 +28,11 @@ const Home: React.FC = () => {
           <Hero />
           <TrustBar />
           <ProblemSection />
+          <AcquisitionServices />
           <GrowthEngine />
           <Outcomes />
           <WebsitePortfolio limit={6} />
-          <CaseStudies />
           <Comparison />
-          <Testimonials />
           <FAQ />
           <CTASection />
         </main>

@@ -1,20 +1,20 @@
 export const positioning = {
   brand: "Able Digital",
-  category: "Growth Partner for Local & Service-Led Businesses",
-  promise: "Build Trust. Get Found. Win More Customers.",
+  category: "Customer Acquisition & Growth Partner",
+  promise: "Get Found. Generate Leads. Book More Jobs.",
   hero: {
-    eyebrow: "The Local Growth Engine",
-    headline: "Helping businesses get found online and win more customers.",
-    sub: "One complete system for websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered to turn online searches into real enquiries.",
-    primaryCta: { label: "Start Your Project", href: "/contact" },
-    secondaryCta: { label: "See the Growth System", href: "/services" },
-    trustLine: "Built for business owners across industries — with deep home-service expertise.",
+    eyebrow: "Customer Acquisition & Business Growth",
+    headline: "More qualified leads. More booked jobs. Real business growth.",
+    sub: "We help service businesses attract ready-to-buy customers, convert enquiries into appointments, and grow with Google Ads, Local SEO, conversion-focused websites, CRM follow-up, and real customer reviews.",
+    primaryCta: { label: "Get a Free Growth Audit", href: "/contact" },
+    secondaryCta: { label: "Explore Growth Services", href: "/services" },
+    trustLine: "Built for business owners who need leads, appointments and measurable growth.",
   },
   metrics: [
-    { value: "3.2×", label: "More qualified calls in 90 days" },
-    { value: "Top 3", label: "Google Map Pack placements" },
-    { value: "47%", label: "Lift in website conversion rate" },
-    { value: "24/7", label: "AI follow-up on every lead" },
+    { value: '01', label: 'Reach ready-to-buy customers' },
+    { value: '02', label: 'Generate relevant enquiries' },
+    { value: '03', label: 'Follow up and book appointments' },
+    { value: '04', label: 'Measure real business growth' },
   ],
 };
 
@@ -31,41 +31,32 @@ export const homeServiceSpecialties = [
 ];
 
 export const problemPoints = [
-  {
-    title: "Invisible on Google.",
-    body: "Your competitors show up in the Map Pack and AI Overviews. You don't. Great work doesn't matter if local customers can't find you.",
-  },
-  {
-    title: "A website that looks nice but doesn't sell.",
-    body: "Traffic without enquiries is a cost, not a channel. Most business websites are brochures — not enquiry engines.",
-  },
-  {
-    title: "Leads slipping through the cracks.",
-    body: "The average local business responds to inbound leads in hours — not minutes. Every delayed response is a job going to a faster competitor.",
-  },
+  { title: "Customers can't find you.", body: "Potential buyers are searching for your services. Without the right search presence and campaigns, they may find a competitor first." },
+  { title: "Visitors leave without enquiring.", body: "A good-looking website is not enough. Your offer, proof and contact journey need to make the next step clear and easy." },
+  { title: "Good leads fall through the cracks.", body: "Missed calls, slow replies and scattered messages can cost sales. A connected CRM and follow-up process helps your team respond consistently." },
 ];
 
 export const comparison = {
   columns: ["Freelancer", "Typical Agency", "Able Digital"],
   rows: [
-    { label: "Focus", values: ["Deliverables", "Retainers", "Qualified local leads"] },
-    { label: "Strategy", values: ["None", "Templated", "Built around your industry"] },
+    { label: "Focus", values: ["Projects", "Channel services", "Customer acquisition"] },
+    { label: "Strategy", values: ["Varies", "Varies", "Built around your goals"] },
     { label: "Website", values: ["Template", "Custom design", "Conversion-engineered"] },
     { label: "Local SEO", values: ["Basic", "Add-on", "Core discipline"] },
     { label: "Google Business Profile", values: ["Rarely", "Optional", "Fully optimized & managed"] },
     { label: "AI Search Visibility", values: ["Not offered", "Emerging", "Built in from day one"] },
     { label: "Review Growth", values: ["Manual", "Basic requests", "Systemized engine"] },
-    { label: "AI Follow-up", values: ["None", "Rare", "Every lead, within 60s"] },
-    { label: "Reporting", values: ["Screenshots", "PDF", "Live dashboard + monthly review"] },
+    { label: "AI Follow-up", values: ["May be manual", "Often separate", "Connected CRM workflows"] },
+    { label: "Reporting", values: ["Project updates", "Campaign reports", "Lead and booking reporting"] },
     { label: "Partnership", values: ["Project-based", "Retainer", "Long-term growth partner"] },
   ],
 };
 
 export const outcomes = [
-  { metric: "3.2×", label: "Qualified inbound calls", detail: "Average 90-day lift across active partners." },
-  { metric: "Top 3", label: "Map Pack placements", detail: "For high-intent service + city keywords." },
-  { metric: "+62%", label: "Website conversion rate", detail: "After the Conversion Website™ rebuild." },
-  { metric: "4.9★", label: "Average review rating", detail: "Powered by the Review Growth Engine™." },
-  { metric: "<60s", label: "Lead response time", detail: "AI follow-up on every form and call." },
-  { metric: "24/7", label: "Growth reporting", detail: "Always-on dashboard for calls, jobs, and ROI." },
+  { metric: "Leads", label: "More qualified enquiries", detail: "Campaigns built to attract relevant prospects, not just clicks." },
+  { metric: "Reach", label: "Better buyer visibility", detail: "Meet customers through search, Maps and paid advertising." },
+  { metric: "CVR", label: "More website conversions", detail: "Make it easier for visitors to call or request a quote." },
+  { metric: "CRM", label: "Fewer missed opportunities", detail: "Track leads and stay consistent with follow-up." },
+  { metric: "Trust", label: "Stronger reputation", detail: "Build confidence through genuine customer reviews." },
+  { metric: "ROI", label: "Measurable growth", detail: "Understand where enquiries, bookings and customers come from." },
 ];
