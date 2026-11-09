@@ -6,13 +6,13 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
 import ProblemSection from '@/components/sections/ProblemSection';
-import GrowthEngine from '@/components/sections/GrowthEngine';
+import GrowthExperience from '@/components/sections/GrowthExperience';
 import Outcomes from '@/components/sections/Outcomes';
 import WorkShowcase from '@/components/sections/WorkShowcase';
 import WebsitePortfolio from '@/components/sections/WebsitePortfolio';
 
 import Comparison from '@/components/sections/Comparison';
-import AcquisitionServices from '@/components/sections/AcquisitionServices';
+
 import FAQ from '@/components/sections/FAQ';
 import CTASection from '@/components/sections/CTASection';
 
@@ -29,8 +29,7 @@ const Home: React.FC = () => {
           <Hero />
           <TrustBar />
           <ProblemSection />
-          <AcquisitionServices />
-          <GrowthEngine />
+          <GrowthExperience />
           <Outcomes />
           <WebsitePortfolio limit={6} />
           <WorkShowcase compact />
