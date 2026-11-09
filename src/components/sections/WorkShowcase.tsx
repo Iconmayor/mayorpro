@@ -72,9 +72,6 @@ const WorkShowcase: React.FC<{compact?:boolean}> = ({compact=false}) => {
           </div>
         </article>)}
       </div>
-      <div className="mt-7 rounded-xl border px-5 py-4" style={{borderColor:dark?'rgba(255,255,255,.1)':'#e6e3d9',color:muted}}>
-        <p className="text-sm leading-relaxed"><strong style={{color:dark?'#fff':'#111'}}>Portfolio transparency:</strong> The photographs are real stock images, not AI-generated. Pinterest links are third-party design references, not completed campaigns or client testimonials. Actual client screenshots and verified performance results will replace illustrative content only when permission and evidence are available.</p>
-      </div>
     </Container>
   </section>;
 };

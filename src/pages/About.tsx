@@ -24,7 +24,7 @@ const About: React.FC = () => {
         <Navbar />
         <main className="flex-1">
           <section
-            className="section-padding"
+            className="pt-24 md:pt-28 pb-8 md:pb-10"
             style={{
               background: isDark
                 ? 'radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,0.10), transparent 60%), #0a0a0a'
@@ -54,7 +54,7 @@ const About: React.FC = () => {
             </Container>
           </section>
 
-          <section className="section-padding">
+          <section className="pt-4 md:pt-6 pb-16 md:pb-24">
             <Container maxWidth="md">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
