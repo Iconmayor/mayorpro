@@ -19,13 +19,13 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
       <Container maxWidth="lg">
         <div className="mb-8 max-w-2xl">
           <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-            {limit ? 'Our Work' : 'Website Portfolio'}
+            {limit ? 'Selected Website Work' : 'Website References'}
           </Typography>
           <Typography className="font-display" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: isDark ? '#fff' : '#0a0a0a', mb: 2 }}>
-            Website work & design examples.
+            Website projects & live site references.
           </Typography>
           <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1rem', lineHeight: 1.65 }}>
-            Explore selected website examples across industries. Contact us for details of our verified involvement and project scope.
+            Additional website references across industries. Click to view each site; contact us for verified delivery scope and project details.
           </Typography>
         </div>
 

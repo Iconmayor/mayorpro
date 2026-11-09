@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CTASection from '@/components/sections/CTASection';
 import WebsitePortfolio from '@/components/sections/WebsitePortfolio';
+import WorkShowcase from '@/components/sections/WorkShowcase';
 import { caseStudies } from '@/data/caseStudies';
 import { projects } from '@/data/projects';
 import { useTheme } from '@/context/ThemeContext';
@@ -18,8 +19,8 @@ const Projects: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Work & Case Studies | Able Digital</title>
-        <meta name="description" content="Explore selected website work, design examples and conversion-driven digital experiences." />
+        <title>Our Work | Websites, Google Ads, SEO, CRM & Lead Generation | Able Digital</title>
+        <meta name="description" content="Explore website references and illustrative service examples for lead generation, Google Ads, local SEO, landing pages, CRM automation and reputation." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -47,14 +48,15 @@ const Projects: React.FC = () => {
                   mb: 3,
                 }}
               >
-                Websites designed to <span className="text-primary">start conversations.</span>
+                Beyond websites. <span className="text-primary">Built for business growth.</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: 620, mx: 'auto' }}>
-                Browse website examples with clear messaging and conversion-focused design. Contact us for project-specific delivery details and evidence of outcomes where available.
+                Explore website references and illustrative service examples covering customer acquisition, paid advertising, Local SEO, conversion, CRM, bookings and reputation. Client delivery claims are clearly distinguished from examples.
               </Typography>
             </Container>
           </section>
 
+          <WorkShowcase />
           <WebsitePortfolio />
 
           <CTASection />

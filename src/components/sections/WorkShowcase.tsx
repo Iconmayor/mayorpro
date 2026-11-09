@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Typography, Chip, Button } from '@mui/material';
-import { ArrowRight, ArrowUpRight, BriefcaseBusiness } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioSites } from '@/data/portfolio';
 import { useTheme } from '@/context/ThemeContext';

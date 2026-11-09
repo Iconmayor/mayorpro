@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
   };
 
   const handleEmail = () => {
-    window.location.href = 'mailto:Iconmayor1@gmail.com?subject=Free%20Growth%20Audit%20Request&body=Business%20name%3A%0AWebsite%3A%0ALocation%20served%3A%0AMain%20growth%20challenge%3A';
+    window.location.href = 'mailto:info@abledigital.site?subject=Free%20Growth%20Audit%20Request&body=Business%20name%3A%0AWebsite%3A%0ALocation%20served%3A%0AMain%20growth%20challenge%3A';
   };
 
   const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
     <>
       <Helmet>
         <title>Get a Free Customer Acquisition Audit | Able Digital</title>
-        <meta name="description" content="30 minutes. No pressure. We'll show you exactly where your local visibility gaps are — and what a Local Growth Engine would do for your business." />
+        <meta name="description" content="30 minutes. No pressure. Explore how your business can attract, convert, and follow up with more qualified customers." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                       <ContactCard
                         icon={<Mail size={18} />}
                         title="Email"
-                        value="Iconmayor1@gmail.com"
+                        value="info@abledigital.site"
                         onClick={handleEmail}
                         isDark={isDark}
                       />

@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {[
                 { l: 'Growth Services', p: '/services' },
-                { l: 'Website Portfolio', p: '/projects' },
+                { l: 'Our Work', p: '/projects' },
                 { l: 'About', p: '/about' },
                 { l: 'Contact', p: '/contact' },
               ].map((i) => (
@@ -57,8 +57,8 @@ const Footer: React.FC = () => {
             </Typography>
             <ul className="space-y-2 text-sm" style={{ color: isDark ? '#a0a0a0' : '#6b7280' }}>
               <li>
-                <a href="mailto:Iconmayor1@gmail.com" className="no-underline" style={{ color: 'inherit' }}>
-                  Iconmayor1@gmail.com
+                <a href="mailto:info@abledigital.site" className="no-underline" style={{ color: 'inherit' }}>
+                  info@abledigital.site
                 </a>
               </li>
               <li>Serving clients worldwide — remote</li>
