@@ -9,6 +9,7 @@ import ProblemSection from '@/components/sections/ProblemSection';
 import GrowthEngine from '@/components/sections/GrowthEngine';
 import Outcomes from '@/components/sections/Outcomes';
 import WorkShowcase from '@/components/sections/WorkShowcase';
+import WebsitePortfolio from '@/components/sections/WebsitePortfolio';
 
 import Comparison from '@/components/sections/Comparison';
 import AcquisitionServices from '@/components/sections/AcquisitionServices';
@@ -31,6 +32,7 @@ const Home: React.FC = () => {
           <AcquisitionServices />
           <GrowthEngine />
           <Outcomes />
+          <WebsitePortfolio limit={6} />
           <WorkShowcase compact />
           <Comparison />
           <FAQ />

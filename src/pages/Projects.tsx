@@ -48,16 +48,16 @@ const Projects: React.FC = () => {
                   mb: 3,
                 }}
               >
-                Beyond websites. <span className="text-primary">Built for business growth.</span>
+                Real website examples. <span className="text-primary">A broader vision for growth.</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: 620, mx: 'auto' }}>
-                Explore website references and illustrative service examples covering customer acquisition, paid advertising, Local SEO, conversion, CRM, bookings and reputation. Client delivery claims are clearly distinguished from examples.
+                Explore the original website collection below, preserved with its existing screenshots and links. After that, browse visual references for lead generation, advertising, local search, CRM, bookings and reputation.
               </Typography>
             </Container>
           </section>
 
-          <WorkShowcase />
           <WebsitePortfolio />
+          <WorkShowcase />
 
           <CTASection />
         </main>
