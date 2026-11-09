@@ -11,7 +11,7 @@ const Outcomes: React.FC = () => {
   return (
     <section
       className="section-padding"
-      style={{ backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)' }}
+      style={{ backgroundColor: isDark ? '#1C1A17' : '#FFFFFF' }}
     >
       <Container maxWidth="lg">
         <div className="max-w-2xl mb-14">
@@ -44,8 +44,8 @@ const Outcomes: React.FC = () => {
               <Box
                 className="p-6 md:p-7 rounded-2xl border h-full"
                 sx={{
-                  backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff',
-                  borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+                  backgroundColor: isDark ? '#27241F' : '#F9F7F1',
+                  borderColor: isDark ? 'rgba(212,175,55,0.12)' : '#E9E3D8',
                 }}
               >
                 <Typography sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700, color: '#D4AF37', letterSpacing: '-0.02em', lineHeight: 1 }}>

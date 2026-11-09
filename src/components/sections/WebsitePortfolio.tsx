@@ -17,7 +17,7 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
   const list = limit ? filtered.slice(0, limit) : filtered;
 
   return (
-    <section className="section-padding" id={limit ? "our-work" : "portfolio"}>
+    <section className="section-padding" id={limit ? "our-work" : "portfolio"} style={{ background: isDark ? "#1A1916" : "#FFFFFF" }}>
       <Container maxWidth="lg">
         <div className="mb-8 max-w-2xl">
           <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
@@ -57,7 +57,7 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
               transition={{ duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : Math.min(index % 3, 2) * 0.08 }}
               whileHover={reduceMotion ? undefined : { y: -5 }}
               className="rounded-2xl border overflow-hidden flex flex-col transition-shadow duration-300 hover:shadow-xl"
-              style={{ backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff', borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)' }}
+              style={{ backgroundColor: isDark ? '#25231F' : '#FFFFFF', borderColor: isDark ? 'rgba(212,175,55,0.13)' : '#E7E4DD' }}
             >
               <a href={s.url} target="_blank" rel="noopener noreferrer" className="block relative aspect-[16/10] overflow-hidden group">
                 {s.image ? (

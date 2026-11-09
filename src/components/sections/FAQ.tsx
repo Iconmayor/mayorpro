@@ -13,7 +13,7 @@ const FAQ: React.FC = () => {
   return (
     <section
       className="section-padding"
-      style={{ backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)' }}
+      style={{ backgroundColor: isDark ? '#1D1B18' : '#FFFFFF' }}
     >
       <Container maxWidth="md">
         <div className="text-center mb-14">
@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
         <Box
           className="rounded-2xl border overflow-hidden"
           sx={{
-            backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff',
+            backgroundColor: isDark ? '#292621' : '#FBF9F4',
             borderColor: border,
           }}
         >

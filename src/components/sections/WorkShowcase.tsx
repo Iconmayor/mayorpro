@@ -46,7 +46,7 @@ const WorkShowcase: React.FC<{compact?:boolean}> = ({compact=false}) => {
   const dark = mode==='dark';
   const muted = dark?'#b7b7b7':'#565b64';
   const items = compact?inspirations.slice(0,3):inspirations;
-  return <section id="service-inspiration" className="section-padding" style={{background:dark?'#101010':'#f9f8f5'}}>
+  return <section id="service-inspiration" className="section-padding" style={{background:dark?'#22201C':'#F5F2E9'}}>
     <Container maxWidth="lg">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
         <div className="max-w-2xl">
@@ -57,7 +57,7 @@ const WorkShowcase: React.FC<{compact?:boolean}> = ({compact=false}) => {
         {compact && <Button component={Link} to="/projects" variant="outlined" endIcon={<ArrowRight size={17}/>} sx={{alignSelf:'start',borderColor:'#D4AF37',color:'#D4AF37',whiteSpace:'nowrap'}}>View all categories</Button>}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {items.map((item,i)=><article key={item.title} className="rounded-3xl overflow-hidden border flex flex-col group" style={{background:dark?'#171717':'#fff',borderColor:dark?'rgba(255,255,255,.1)':'#e9e7e1',boxShadow:dark?'none':'0 16px 40px -34px rgba(20,20,20,.35)'}}>
+        {items.map((item,i)=><article key={item.title} className="rounded-3xl overflow-hidden border flex flex-col group" style={{background:dark?'#2C2924':'#FFFFFF',borderColor:dark?'rgba(212,175,55,.12)':'#E6E0D4',boxShadow:dark?'none':'0 16px 40px -34px rgba(20,20,20,.35)'}}>
           <div className="relative aspect-[16/10] overflow-hidden">
             <img src={item.image} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             <div className="absolute top-4 left-4 rounded-full px-3 py-1.5 text-xs font-bold" style={{color:'#111',background:'#D4AF37'}}>{item.category}</div>

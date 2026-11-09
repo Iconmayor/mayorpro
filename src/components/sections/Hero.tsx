@@ -4,7 +4,7 @@ import { Container, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, CalendarCheck2, CheckCircle2, MessageCircle, Search, MousePointerClick, Sparkles } from 'lucide-react';
 import { positioning } from '@/data/positioning';
-import { useTheme } from '@/context/ThemeContext';
+
 
 const rotating = ['booked jobs.', 'paying customers.', 'real growth.'];
 const journey = [
@@ -15,7 +15,6 @@ const journey = [
 ];
 
 const Hero: React.FC = () => {
-  const { mode } = useTheme();
   const reduced = useReducedMotion();
   const [index, setIndex] = useState(0);
   useEffect(() => {
@@ -23,7 +22,8 @@ const Hero: React.FC = () => {
     const timer = window.setInterval(() => setIndex(i => (i + 1) % rotating.length), 3500);
     return () => window.clearInterval(timer);
   }, [reduced]);
-  const dark = mode === 'dark';
+  // The premium hero remains dark in both themes to create a strong editorial anchor.
+  const dark = true;
   const fg = dark ? '#fff' : '#141414';
   const muted = dark ? '#b9b9b9' : '#505866';
   const border = dark ? 'rgba(255,255,255,.11)' : 'rgba(0,0,0,.09)';

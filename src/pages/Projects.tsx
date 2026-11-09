@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
             style={{
               background: isDark
                 ? 'radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,0.10), transparent 60%), #0a0a0a'
-                : 'radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,0.15), transparent 60%), #ffffff',
+                : 'radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,0.13), transparent 60%), #F8F6EF',
             }}
           >
             <Container maxWidth="md" className="text-center">

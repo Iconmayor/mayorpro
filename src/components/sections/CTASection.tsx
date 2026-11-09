@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { Container, Typography, Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, Calendar, Check } from 'lucide-react';
-import { useTheme } from '@/context/ThemeContext';
+
 
 const CTASection: React.FC = () => {
-  const { mode } = useTheme();
-  const isDark = mode === 'dark';
+  // Closing CTA deliberately stays dark in either presentation mode.
+  const isDark = true;
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hi Able Digital, I'd like a free customer acquisition audit. My business is: ");

@@ -12,7 +12,7 @@ const ProblemSection: React.FC = () => {
   const isDark = mode === 'dark';
 
   return (
-    <section className="section-padding">
+    <section className="section-padding" style={{ background: isDark ? "#1C1B18" : "#F7F5EF" }}>
       <Container maxWidth="lg">
         <div className="max-w-2xl mb-14">
           <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
@@ -46,8 +46,8 @@ const ProblemSection: React.FC = () => {
                 <Box
                   className="p-6 md:p-8 rounded-2xl h-full border"
                   sx={{
-                    backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff',
-                    borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+                    backgroundColor: isDark ? '#272520' : '#FFFFFF',
+                    borderColor: isDark ? 'rgba(212,175,55,0.12)' : '#E6E1D7',
                   }}
                 >
                   <Box
