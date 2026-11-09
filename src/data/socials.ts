@@ -33,7 +33,7 @@ export const socials: Social[] = [
   {
     id: 5,
     name: "Email",
-    url: "mailto:Iconmayor1@gmail.com",
+    url: "mailto:info@abledigital.site",
     icon: "Mail"
   }
 ];
