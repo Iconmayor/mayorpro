@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Container, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Search, MousePointerClick, CalendarCheck, Star } from 'lucide-react';
@@ -40,6 +41,7 @@ const journey = [
 
 const AcquisitionServices: React.FC<{detailed?:boolean}> = ({detailed=false}) => {
   const {mode}=useTheme();
+  const reduceMotion = useReducedMotion();
   const dark=mode==='dark', fg=dark?'#fff':'#101010', muted=dark?'#b8b8b8':'#4b5563';
   return <section id="customer-acquisition" className="section-padding">
     <Container maxWidth="lg">
@@ -53,7 +55,7 @@ const AcquisitionServices: React.FC<{detailed?:boolean}> = ({detailed=false}) =>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((service,index)=>{
           const Icon=service.Icon;
-          return <article key={service.id} className={'rounded-2xl overflow-hidden border flex flex-col group ' + (index===0?'md:grid md:grid-cols-2 md:col-span-2':'')}
+          return <motion.article key={service.id} initial={reduceMotion ? false : { opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : (index % 2) * 0.09 }} className={'rounded-2xl overflow-hidden border flex flex-col group ' + (index===0?'md:grid md:grid-cols-2 md:col-span-2':'')}
             style={{background:dark?'#141414':'#fff',borderColor:dark?'rgba(255,255,255,.1)':'rgba(0,0,0,.09)'}}>
             <div className={'relative overflow-hidden '+(index===0?'min-h-[280px] md:min-h-[380px]':'h-[235px]')}>
               <img src={service.photo} loading="lazy" decoding="async" alt={service.alt} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -71,7 +73,7 @@ const AcquisitionServices: React.FC<{detailed?:boolean}> = ({detailed=false}) =>
               {detailed&&<ul className="mt-5 space-y-2">{service.points.map(point=><li key={point} className="text-sm flex gap-2" style={{color:muted}}><span className="text-primary">✓</span>{point}</li>)}</ul>}
               <Link to="/contact" className="mt-6 inline-flex items-center gap-2 font-semibold text-sm text-primary no-underline self-start">Discuss this service <ArrowRight size={15}/></Link>
             </div>
-          </article>;
+          </motion.article>;
         })}
       </div>
       <p className="text-xs text-right mt-3" style={{color:muted}}>Illustrative stock photography; not images of client results.</p>

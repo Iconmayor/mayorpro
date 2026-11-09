@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Container, Typography, Chip } from '@mui/material';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,6 +10,7 @@ import { useTheme } from '@/context/ThemeContext';
 const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
   const { mode } = useTheme();
   const isDark = mode === 'dark';
+  const reduceMotion = useReducedMotion();
   const cats = ['All Projects', ...Array.from(new Set(portfolioSites.map((s) => s.category)))];
   const [active, setActive] = useState('All Projects');
   const filtered = active === 'All Projects' ? portfolioSites : portfolioSites.filter((s) => s.category === active);
@@ -46,10 +48,15 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
         </div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {list.map((s) => (
-            <div
+          {list.map((s, index) => (
+            <motion.div
               key={s.url}
-              className="rounded-2xl border overflow-hidden flex flex-col"
+              initial={reduceMotion ? false : { opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : Math.min(index % 3, 2) * 0.08 }}
+              whileHover={reduceMotion ? undefined : { y: -5 }}
+              className="rounded-2xl border overflow-hidden flex flex-col transition-shadow duration-300 hover:shadow-xl"
               style={{ backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff', borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)' }}
             >
               <a href={s.url} target="_blank" rel="noopener noreferrer" className="block relative aspect-[16/10] overflow-hidden group">
@@ -71,7 +78,7 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
                   <span className="text-xs opacity-70 break-all">{s.url}</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         {limit && (
