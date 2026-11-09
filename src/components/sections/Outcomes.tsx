@@ -28,7 +28,7 @@ const Outcomes: React.FC = () => {
               color: isDark ? '#fff' : '#0a0a0a',
             }}
           >
-            What partnership with Able Digital <span className="text-primary">actually produces.</span>
+            The commercial outcomes we <span className="text-primary">work to improve.</span>
           </Typography>
         </div>
 

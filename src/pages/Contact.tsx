@@ -13,12 +13,12 @@ const Contact: React.FC = () => {
   const isDark = mode === 'dark';
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my business.");
+    const message = encodeURIComponent("Hi Able Digital, I'd like to request a growth audit. My business is: ");
     window.open(`https://wa.me/447988373847?text=${message}`, '_blank');
   };
 
   const handleEmail = () => {
-    window.location.href = 'mailto:Iconmayor1@gmail.com?subject=Strategy%20Call%20Request';
+    window.location.href = 'mailto:Iconmayor1@gmail.com?subject=Free%20Growth%20Audit%20Request&body=Business%20name%3A%0AWebsite%3A%0ALocation%20served%3A%0AMain%20growth%20challenge%3A';
   };
 
   const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Book a Strategy Call | Able Digital</title>
+        <title>Get a Free Customer Acquisition Audit | Able Digital</title>
         <meta name="description" content="30 minutes. No pressure. We'll show you exactly where your local visibility gaps are — and what a Local Growth Engine would do for your business." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                   className="lg:col-span-7"
                 >
                   <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-                    Strategy Call
+                    Free Growth Audit
                   </Typography>
                   <Typography
                     className="font-display"
@@ -64,10 +64,10 @@ const Contact: React.FC = () => {
                       mb: 3,
                     }}
                   >
-                    Let's build your <span className="text-primary">digital presence.</span>
+                    Let's get you more <span className="text-primary">qualified enquiries.</span>
                   </Typography>
                   <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.15rem', lineHeight: 1.65, mb: 5 }}>
-                    30 minutes. No pressure. We'll audit your visibility live, share what's working in your market, and show you the fastest path to more qualified enquiries.
+                    Tell us where your business needs more customers. We'll discuss your current visibility, website, lead capture, follow-up and booking opportunities.
                   </Typography>
 
                   <div className="mb-8">
@@ -76,10 +76,10 @@ const Contact: React.FC = () => {
                     </Typography>
                     <ul className="space-y-3">
                       {[
-                        'A live audit of your Google Business Profile and local rankings.',
-                        'Honest feedback on your current website conversion.',
-                        'A 90-day roadmap tailored to your service area.',
-                        'A clear answer on whether we\'re a fit — or who is.',
+                        'A review of how potential customers discover you.',
+                        'Honest feedback on your website and enquiry journey.',
+                        'Practical ideas for ads, local search and lead follow-up.',
+                        'A clear discussion of the next steps and whether we are a fit.',
                       ].map((i) => (
                         <li key={i} className="flex items-start gap-3">
                           <Check size={20} className="text-primary flex-shrink-0 mt-0.5" />

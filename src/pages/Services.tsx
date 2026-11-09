@@ -7,6 +7,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import GrowthEngine from '@/components/sections/GrowthEngine';
+import AcquisitionServices from '@/components/sections/AcquisitionServices';
 import CTASection from '@/components/sections/CTASection';
 import FAQ from '@/components/sections/FAQ';
 import { useTheme } from '@/context/ThemeContext';
@@ -18,8 +19,8 @@ const Services: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>The Local Growth Engine™ | Able Digital</title>
-        <meta name="description" content="Seven phases. One system. How Able Digital builds a complete growth engine for businesses across industries — websites, Local SEO, reviews and AI visibility." />
+        <title>Lead Generation, Google Ads, Local SEO & CRM | Able Digital</title>
+        <meta name="description" content="Five connected services for qualified leads, Google Ads and Local SEO, website conversions, CRM follow-up and genuine customer review growth." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -47,10 +48,10 @@ const Services: React.FC = () => {
                   mb: 3,
                 }}
               >
-                The Able Digital <span className="text-primary">Local Growth Engine™</span>
+                The growth services behind <span className="text-primary">more booked jobs.</span>
               </Typography>
               <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.15rem', lineHeight: 1.6, mb: 5, maxWidth: 640, mx: 'auto' }}>
-                Websites, Local SEO, Google Business Profile, reviews, and AI visibility — engineered as one system for any business whose customers search before they buy. Every phase compounds the next.
+                We help service businesses get discovered, turn interest into enquiries, follow up with prospective customers, and measure real business opportunities.
               </Typography>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Button
@@ -61,7 +62,7 @@ const Services: React.FC = () => {
                   startIcon={<Calendar size={18} />}
                   sx={{ backgroundColor: '#D4AF37', color: '#0a0a0a', px: 3.5, py: 1.6, borderRadius: '10px', fontWeight: 700, '&:hover': { backgroundColor: '#E8C547' } }}
                 >
-                  Grow Your Business
+                  Get a Free Growth Audit
                 </Button>
                 <Button
                   component="a"
@@ -82,6 +83,7 @@ const Services: React.FC = () => {
             </Container>
           </section>
 
+          <AcquisitionServices detailed />
           <GrowthEngine detailed />
           <FAQ />
           <CTASection />

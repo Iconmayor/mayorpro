@@ -37,10 +37,10 @@ const GrowthEngine: React.FC<Props> = ({ detailed = false }) => {
               mb: 2,
             }}
           >
-            One system. Seven phases. <span className="text-primary">Compounding growth.</span>
+            One process. Five steps. <span className="text-primary">Connected customer growth.</span>
           </Typography>
           <Typography sx={{ color: isDark ? '#a0a0a0' : '#4b5563', fontSize: '1.05rem', lineHeight: 1.65 }}>
-            Every phase is engineered to work with the next. Together they turn online searches into real enquiries — month after month.
+            Our process connects customer discovery, conversion, lead follow-up and reputation. The right mix depends on your market, budget and goals.
           </Typography>
         </div>
 
