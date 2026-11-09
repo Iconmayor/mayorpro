@@ -24,13 +24,24 @@ const goldLight = '#E8C547';
 const goldDark = '#B8962E';
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // The editorial light presentation is the default on a visitor's first visit.
+  // The versioned key intentionally ignores older theme preferences from before
+  // the light-first redesign, while preserving any new choice made with the toggle.
+  const themePreferenceKey = 'able-digital-theme-v2';
   const [mode, setMode] = useState<ThemeMode>(() => {
-    const saved = localStorage.getItem('theme-mode');
-    return saved === 'dark' || saved === 'light' ? saved : 'light';
+    try {
+      return localStorage.getItem(themePreferenceKey) === 'dark' ? 'dark' : 'light';
+    } catch {
+      return 'light';
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem('theme-mode', mode);
+    try {
+      localStorage.setItem(themePreferenceKey, mode);
+    } catch {
+      // Browsers with restricted storage can still use the theme toggle.
+    }
     document.documentElement.classList.toggle('dark', mode === 'dark');
   }, [mode]);
 
