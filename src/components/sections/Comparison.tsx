@@ -10,7 +10,7 @@ const Comparison: React.FC = () => {
   const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
 
   return (
-    <section className="section-padding">
+    <section className="section-padding" style={{ background: isDark ? "#171614" : "#F6F2E9" }}>
       <Container maxWidth="lg">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
@@ -33,7 +33,7 @@ const Comparison: React.FC = () => {
         <Box
           className="rounded-2xl border overflow-hidden"
           sx={{
-            backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#fff',
+            backgroundColor: isDark ? '#24211C' : '#FFFFFF',
             borderColor: border,
           }}
         >

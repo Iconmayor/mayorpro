@@ -26,7 +26,7 @@ const goldDark = '#B8962E';
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [mode, setMode] = useState<ThemeMode>(() => {
     const saved = localStorage.getItem('theme-mode');
-    return (saved as ThemeMode) || 'dark';
+    return saved === 'dark' || saved === 'light' ? saved : 'light';
   });
 
   useEffect(() => {

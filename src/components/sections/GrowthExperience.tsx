@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Container, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Target, Search, MousePointerClick, CalendarCheck2, Star, CheckCircle2 } from 'lucide-react';
-import { useTheme } from '@/context/ThemeContext';
+
 
 const steps = [
   {
@@ -55,9 +55,9 @@ const steps = [
 
 const GrowthExperience: React.FC = () => {
   const [active, setActive] = useState(0);
-  const { mode } = useTheme();
   const reduceMotion = useReducedMotion();
-  const dark = mode === 'dark';
+  // A deliberately dark showcase in both modes, set against the lighter content bands.
+  const dark = true;
   const current = steps[active];
   const fg = dark ? '#fff' : '#131313';
   const muted = dark ? '#b9b9b9' : '#515662';

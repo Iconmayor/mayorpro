@@ -11,8 +11,8 @@ const TrustBar: React.FC = () => {
     <section
       className="py-12 md:py-16 border-y"
       style={{
-        borderColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
-        backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)',
+        borderColor: isDark ? 'rgba(212,175,55,0.18)' : '#ECE3CF',
+        backgroundColor: isDark ? '#231F18' : '#FBF7EC',
       }}
     >
       <Container maxWidth="lg">

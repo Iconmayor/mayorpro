@@ -218,3 +218,9 @@
   .able-pulse-dot { animation: none; }
   .card-hover { transition: none; }
 }
+
+/* Alternating editorial bands separate the customer journey without replacing the brand. */
+:root { color-scheme: light; }
+:root.dark { color-scheme: dark; }
+section { transition: background-color .28s ease, background .28s ease; }
+@media (prefers-reduced-motion: reduce) { section { transition: none; } }
