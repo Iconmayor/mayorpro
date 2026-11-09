@@ -22,10 +22,10 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
             {limit ? 'Our Work' : 'Website Portfolio'}
           </Typography>
           <Typography className="font-display" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: isDark ? '#fff' : '#0a0a0a', mb: 2 }}>
-            Websites by ABLE DIGITAL.
+            Website work & design examples.
           </Typography>
           <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1rem', lineHeight: 1.65 }}>
-            Live websites across industries — click any project to visit it.
+            Explore selected website examples across industries. Contact us for details of our verified involvement and project scope.
           </Typography>
         </div>
 
@@ -62,7 +62,7 @@ const WebsitePortfolio: React.FC<{ limit?: number }> = ({ limit }) => {
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span style={{ color: '#D4AF37', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{s.category}</span>
-                  <span style={{ color: isDark ? '#7a7a7a' : '#9ca3af', fontSize: '0.7rem' }}>{s.status}</span>
+                  <span style={{ color: isDark ? '#7a7a7a' : '#9ca3af', fontSize: '0.7rem' }}>{s.status === 'Needs Verification' ? 'Scope available on request' : s.status}</span>
                 </div>
                 <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: isDark ? '#fff' : '#0a0a0a', mb: 1 }}>{s.title}</Typography>
                 <Typography sx={{ color: isDark ? '#a0a0a0' : '#4b5563', fontSize: '0.9rem', lineHeight: 1.6, mb: 3 }}>{s.description}</Typography>

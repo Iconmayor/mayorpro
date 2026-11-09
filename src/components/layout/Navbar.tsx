@@ -9,7 +9,7 @@ import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 const navItems = [
-  { label: 'Growth System', path: '/services' },
+  { label: 'Growth Services', path: '/services' },
   { label: 'Our Work', path: '/projects' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
                   '&:hover': { backgroundColor: '#E8C547' },
                 }}
               >
-                Book a Call
+                Free Growth Audit
               </Button>
 
               <IconButton
@@ -181,7 +181,7 @@ const Navbar: React.FC = () => {
               '&:hover': { backgroundColor: '#E8C547' },
             }}
           >
-            Book a Strategy Call
+            Free Growth Audit
           </Button>
         </Box>
       </Drawer>

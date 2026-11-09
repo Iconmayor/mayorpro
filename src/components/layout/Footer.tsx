@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <Typography sx={{ mt: 2, color: isDark ? '#a0a0a0' : '#6b7280', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              The Local Growth Engine for businesses that want to be found, trusted, and chosen online.
+              Customer acquisition services that help businesses get found, generate enquiries, follow up and book more jobs.
             </Typography>
           </div>
 
@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
             </Typography>
             <ul className="space-y-2">
               {[
-                { l: 'Growth System', p: '/services' },
-                { l: 'Case Studies', p: '/projects' },
+                { l: 'Growth Services', p: '/services' },
+                { l: 'Website Portfolio', p: '/projects' },
                 { l: 'About', p: '/about' },
                 { l: 'Contact', p: '/contact' },
               ].map((i) => (
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             © {year} Able Digital. All rights reserved.
           </Typography>
           <Typography sx={{ color: isDark ? '#7a7a7a' : '#9ca3af', fontSize: '0.8rem' }}>
-            Build Trust. Get Found. Win More Customers.
+            Get Found. Generate Leads. Book More Jobs.
           </Typography>
         </div>
       </Container>

@@ -10,7 +10,7 @@ const CTASection: React.FC = () => {
   const isDark = mode === 'dark';
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hi Able Digital — I'd like to book a strategy call for my business.");
+    const message = encodeURIComponent("Hi Able Digital, I'd like a free customer acquisition audit. My business is: ");
     window.open(`https://wa.me/447988373847?text=${message}`, '_blank');
   };
 
@@ -40,7 +40,7 @@ const CTASection: React.FC = () => {
             }}
           >
             <Typography sx={{ color: '#D4AF37', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', textTransform: 'uppercase', mb: 2 }}>
-              Free Strategy Call
+              Free Customer Acquisition Audit
             </Typography>
             <Typography
               className="font-display"
@@ -53,17 +53,17 @@ const CTASection: React.FC = () => {
                 mb: 3,
               }}
             >
-              Let's build your <span className="text-primary">digital presence.</span>
+              Let's find your next <span className="text-primary">growth opportunity.</span>
             </Typography>
             <Typography sx={{ color: isDark ? '#b5b5b5' : '#4b5563', fontSize: '1.05rem', maxWidth: '540px', mx: 'auto', mb: 5, lineHeight: 1.65 }}>
-              30 minutes, free. Whatever industry you're in, we'll show you where your visibility gaps are and what a growth system would do for your business.
+              We'll review your lead sources, website and follow-up process and discuss practical opportunities to attract more relevant enquiries and booked appointments.
             </Typography>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto mb-8 text-left">
               {[
-                'Market & competitor scan',
-                'Website & search visibility review',
-                '90-day growth roadmap',
+                'Customer demand opportunities',
+                'Website and lead journey review',
+                'Prioritized growth recommendations',
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2">
                   <Check size={18} className="text-primary flex-shrink-0 mt-0.5" />
@@ -89,7 +89,7 @@ const CTASection: React.FC = () => {
                   '&:hover': { backgroundColor: '#E8C547' },
                 }}
               >
-                Start Your Project
+                Get a Free Growth Audit
               </Button>
               <Button
                 onClick={handleWhatsApp}
