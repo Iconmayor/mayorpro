@@ -76,7 +76,6 @@ const AcquisitionServices: React.FC<{detailed?:boolean}> = ({detailed=false}) =>
           </motion.article>;
         })}
       </div>
-      <p className="text-xs text-right mt-3" style={{color:muted}}>Illustrative stock photography; not images of client results.</p>
       <div className="mt-16 md:mt-20 rounded-3xl p-7 md:p-10 border" style={{background:dark?'rgba(212,175,55,.055)':'rgba(212,175,55,.065)',borderColor:dark?'rgba(255,255,255,.09)':'rgba(0,0,0,.08)'}}>
         <p className="text-primary text-xs font-extrabold uppercase tracking-widest">How your growth system works</p>
         <h3 className="font-display text-2xl md:text-3xl font-bold mt-3 mb-8" style={{color:fg}}>From first discovery to booked appointment.</h3>
